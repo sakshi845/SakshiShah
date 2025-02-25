@@ -1,7 +1,336 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sakshi Shah's Professional Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e272e; /* Darker background */
+            color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            /* Subtle geometric pattern */
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cdefs%3E%3Cpattern id='smallGrid' width='10' height='10' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 10 0 L 0 0 L 0 10' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%' height='100%' fill='url(%23smallGrid)'/%3E%3C/svg%3E");
+        }
+
+        h1 {
+            text-align: center;
+            color: #f0f4f8;
+            font-weight: bold;
+            font-size: 2.5 em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #f0f4f8;
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .header-info p {
+            margin: 8px 0;
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .header-info a {
+            background-color: #3498db; /* Brighter blue */
+            padding: 10px 20px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 5px 10px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-info a:hover {
+            background-color: #2980b9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 2-Column Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #7f8c8d;
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Card-like design for each section */
+        .card {
+            background-color: #2c3e50;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #f0f4f8;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+            color: #bdc3c7;
+        }
+
+        .date-location {
+            font-size: 1.1em;
+            color: #bdc3c7;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            margin-bottom: 15px;
+        }
+
+        .dropdown button {
+            background-color: transparent;
+            color: #3498db;
+            font-size: 1.25em;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 10px 25px;
+            cursor: pointer;
+            display: inline-block;
+            border: none;
+            border-bottom: 2px solid #3498db;
+            width: auto;
+            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+        }
+
+        .dropdown button:hover {
+            color: #2980b9;
+            border-bottom-color: #2980b9;
+        }
+
+        /* Hover to display dropdown */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            display: none;
+            background-color: rgba(44, 62, 80, 0.95);
+            padding: 15px 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        .dropdown-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .dropdown-content ul li {
+            margin-bottom: 12px;
+            color: #bdc3c7;
+        }
+
+        .dropdown-content ul li a {
+            color: #3498db;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown-content ul li a:hover {
+            color: #2980b9;
+        }
+
+        /* Projects Section */
+        .projects-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 0;
+        }
+
+        .projects-list li {
+            color: #f0f4f8;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .projects-list li a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .projects-list li a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+
+        .project-link {
+            position: relative;
+            padding-right: 50px; /* Space for the arrow */
+        }
+
+        .project-link::before {
+            content: '  \2197'; /* Unicode for slant arrow */
+            position: bottom;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1 em;
+            opacity: 1;
+        }
+
+        .project-link:hover::after {
+            opacity: 1;
+
+
+
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
 <body>
-<h1>Sakshi Shah</h1>
-<p>Portfolio</p>
+
+    <div class="container">
+        <header class="section">
+            <h1>Sakshi Shah</h1>
+            <div class="header-info">
+                <p>Masters in Mechanical Engineering | North Carolina State University</p>
+                <p><a href="mailto:sakshi.shah@example.com" class="btn">Email</a> | <a
+                        href="https://www.linkedin.com/in/sakshishah" target="_blank" class="btn">LinkedIn</a></p>
+            </div>
+        </header>
+
+         <!-- About Me Section -->
+         <section class="section">
+            <div class="card">
+                <h3>About Me</h3>
+                <p>
+                    Master's student in Mechanical Engineering, focusing on dynamics and control systems. I am proficient in hardware integration, PLC programming, 
+                    robot path planning, stability analysis, and dynamic system modeling. My experience at Tioga Cardiovascular and Eaton has honed my skills in 
+                    automation, design, and process engineering.
+                </p>
+            </div>
+        </section>
+
+        <!-- 2-Column Grid Layout -->
+        <div class="grid-container">
+            <!-- Professional Experience Section -->
+            <section class="section">
+                <h2>Professional Experience</h2>
+                <div class="card">
+                    <!-- Process Development Intern -->
+                    <div class="dropdown">
+                        <button>Process Development Intern</button>
+                        <p class="date-location">June 2023 - August 2023 | Raleigh, NC</p>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li>Optimized the manufacturing process of the Transcatheter Mitral Valve replacement product.</li>
+                                <li>Designed SLA printed fixtures using SolidWorks for vibration damping and testing the delivery
+                                        system.</li>
+                                <li>Refined engineering drawings and integrated quality checks for injection-molded components.</li>
+                                <li>Generated approval requests for controlled documents of new and revised parts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Associate Engineer -->
+                    <div class="dropdown">
+                        <button>Associate Engineer</button>
+                        <p class="date-location">July 2021 - June 2023 | Charlotte, NC</p>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li>Worked in the Regulators Department, Medium Voltage Power Distribution.</li>
+                                <li>Improved process efficiency by 34% through Python and Excel VBA automation.</li>
+                                <li>Launched over five projects addressing cost-out, design, and manufacturing challenges.</li>
+                                <li>Led continuous improvement initiatives through cross-functional team collaboration.</li>
+                                <li>Recipient of the Eaton Pratibha Excellence Award and certified in Six Sigma DMAIC.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Research Co-Op -->
+                    <div class="dropdown">
+                        <button>Research Co-Op</button>
+                        <p class="date-location">January 2021 - May 2021 | Raleigh, NC</p>
+                        <div class="dropdown-content">
+                            <ul>
+                                <li>Modeled a sustainable mode of intercity travel using SOLIDWORKS and Fusion 360.</li>
+                                <li>Used MATLAB for modeling optimal bicycle handling quality and drivetrain components.</li>
+                                <li>Designed a bicycle with specific control sensitivity and speed parameters.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="section">
+                <h2>Projects</h2>
+                <div class="card">
+                    <ul class="projects-list">
+                        
+                        <li><a href="VisualServoControl.html" class="project-link" target="_blank">Visual Servo Control of a 7-link Kinova Gen3 robot
+                                arm</a></li>
+                        <li><a href="ControllerSimulation.html" class="project-link" target="_blank">Simulation and Design of Nonlinear Controllers for a
+                                Two-Link Robot Arm</a></li>
+                        <li><a href="SmartSortingLine.html"class="project-link" target="_blank">Remote Control and Monitoring of Conveyor System for
+                                Package Delivery</a></li>
+                        <li><a href="ElectroPermanentMagneticClamp.html" class="project-link"  target="_blank">Two Pole Electro-Permanent Magnet Clamp for
+                                Workpiece holding during machining</a></li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2025 Sakshi Shah. All rights reserved.</p>
+        </footer>
+    </div>
+
 </body>
+
 </html>
