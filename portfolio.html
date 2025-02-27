@@ -185,8 +185,8 @@
 
         /* Projects Section */
         .projects-list {
-            list-style:inside;
-            padding-left: 0;
+            list-style:none;
+            padding-left: 20px; /* Adjusts indentation */
             margin-top: 0;
         }
 
@@ -223,11 +223,36 @@
         }
 
         .project-link:hover::after {
-            opacity: 1;
+            color: #2980b9;
+            text-decoration: underline;
+		Opacity :1;
+	}
 
+        .project-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: inline-block;
+            padding: 5px;
+        }
 
+        .project-summary {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 25px;
+            background: #f8f9fa;
+            color: #333;
+            padding: 10px;
+            border-radius: 5px;
+            width: 300px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
 
-
+        .projects-list li:hover .project-summary {
+            display: block;
+        }
 
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -307,32 +332,63 @@
                 </div>
             </section>
 
-            <!-- Projects Section -->
-            <section class="section">
-                <h2>Projects</h2>
-                <div class="card">
-                    <ul class="projects-list">
-                        
-                        <li><a href="VisualServoControl.html" class="project-link" target="_blank">Visual Servo Control of a 7-link Kinova Gen3 robot
-                                arm</a></li>
-                        <li><a href="ControllerSimulation.html" class="project-link" target="_blank">Simulation and Design of Nonlinear Controllers for a
-                                Two-Link Robot Arm</a></li>
-                        <li><a href="SmartSortingLine.html"class="project-link" target="_blank">Remote Control and Monitoring of Conveyor System for
-                                Package Delivery</a></li>
-                        <li><a href="ElectroPermanentMagneticClamp.html" class="project-link"  target="_blank">Two Pole Electro-Permanent Magnet Clamp for
-                                Workpiece holding during machining</a></li>
-                        <li><a href="ElectroPermanentMagneticClamp.html" class="project-link"  target="_blank">Design of State Feedback Controller for Car 
-                                Cruise Control</a></li>
-                        <li><a href="ElectroPermanentMagneticClamp.html" class="project-link"  target="_blank">Modeling Tuned Vibration Absorber to Optimize 
-                                Rider comfort</a></li>
-                        <li><a href="ElectroPermanentMagneticClamp.html" class="project-link"  target="_blank">Modeling and Simulation of spacecraft attitude 
-                                dynamics</a></li>
-                        <li><a href="ElectroPermanentMagneticClamp.html" class="project-link"  target="_blank">Design Upper Limb Locomotion Model for Injury 
-                                Prevention in Baseball Athletes</a></li>
-                                
-                    </ul>
+<section class="section">
+    <h2>Projects</h2>
+    <div class="card">
+        <ul class="projects-list">
+            <li class="dropdown">
+                <a href="VisualServoControl.html" class="project-link" target="_blank">Visual Servo Control of a 7-link Kinova Gen3 Robot Arm</a>
+                <div class="dropdown-content">
+                    Implemented real-time object tracking and control using a camera feedback system.
                 </div>
-            </section>
+            </li>
+            <li class="dropdown">
+                <a href="ControllerSimulation.html" class="project-link" target="_blank">Simulation and Design of Nonlinear Controllers for a Two-	Link Robot Arm</a>
+                <div class="dropdown-content">
+                    Developed nonlinear control algorithms and tested their performance through MATLAB simulations.
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="SmartSortingLine.html" class="project-link" target="_blank">Remote Control and Monitoring of Conveyor System for Package 	Delivery</a>
+                <div class="dropdown-content">
+                    Designed a smart sorting system for automated package handling using PLC and IoT.
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="ElectroPermanentMagneticClamp.html" class="project-link" target="_blank">Two-Pole Electro-Permanent Magnet Clamp for 	Workpiece Holding During Machining</a>
+                <div class="dropdown-content">
+                    Engineered a magnet clamp system to enhance workpiece stability and reduce machining errors.
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="StateFeedbackController.html" class="project-link" target="_blank">Design of State Feedback Controller for Car Cruise 		Control</a>
+                <div class="dropdown-content">
+                    Developed and simulated a state feedback controller to optimize vehicle speed regulation.
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="VibrationAbsorber.html" class="project-link" target="_blank">Modeling Tuned Vibration Absorber to Optimize Rider 	Comfort</a>
+                <div class="dropdown-content">
+                    Designed a vibration absorber to reduce unwanted oscillations in vehicle suspension systems.
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="SpacecraftDynamics.html" class="project-link" target="_blank">Modeling and Simulation of Spacecraft Attitude Dynamics</a>
+                <div class="dropdown-content">
+                    Simulated spacecraft orientation dynamics using control algorithms in MATLAB.
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="UpperLimbLocomotion.html" class="project-link" target="_blank">Design of Upper Limb Locomotion Model for Injury Prevention 	in Baseball Athletes</a>
+                <div class="dropdown-content">
+                    Modeled upper limb biomechanics to analyze and minimize the risk of repetitive stress injuries.
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+
         </div>
 
         <footer class="footer">
