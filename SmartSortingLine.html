@@ -4,70 +4,201 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Sorting Line</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f8ff; /* Light Blue Background */
             color: #333; /* Dark Text for Readability */
             margin: 0;
             padding: 0;
-            line-height: 1.6; /* Improve Line Spacing */
+            line-height: 1.6;
         }
 
+        /* Container Style */
         .container {
-            width: 80%; /* Responsive Width */
-            max-width: 900px; /* Maximum Width */
-            margin: 20px auto; /* Center the Content */
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
             padding: 30px;
-            background-color: #fff; /* White Card Background */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* Header Styles */
         h1 {
-            color: #333;
+            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+            color: #0e253c; /* Dark Blue */
             text-align: center;
             margin-bottom: 20px;
+            font-size: 2em;
         }
 
+        /* Paragraph Styles */
         p {
             margin-bottom: 15px;
+            font-size: 1.1em;
+            text-align: left; /* Align text to the left */
         }
 
+        /* Anchor (Links) Styles */
         a {
-            color: #007bff; /* Bootstrap Blue */
+            color: #007bff;
             text-decoration: none;
+            font-weight: bold;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
-        .tech-used {
-            font-style: italic;
-            color: #777;
+        /* Card Styles */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px; /* Reduced padding */
+            margin: 15px 0; /* Reduced margin */
+        }
+
+        .card-title {
+            font-size: 1.3em; /* Reduced font size */
+            color: #0e253c;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            font-size: 1em; /* Reduced font size */
+            color: #555;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        /* List Styling */
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            font-size: 1.1em;
+        }
+
+        /* Image Styling */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 12px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 15px;
+            }
+
+            p, .card-content {
+                font-size: 1em;
+            }
+
+            ul {
+                font-size: 1em;
+            }
+
+            .image-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .image-container img {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            p, .card-content {
+                font-size: 0.9em;
+            }
+
+            a {
+                font-size: 0.9em;
+            }
+
+            .image-container {
+                gap: 10px;
+            }
+
+            ul {
+                font-size: 0.95em;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-	<p><a href="portfolio.html">Back to Home</a></p>
+        <p><a href="portfolio.html">Back to Home</a></p>
         <h1>Remote Control and Monitoring of Conveyor System for Package Delivery</h1>
-        <p>This project focussed on developing a system taht Sorts packages by color using Micro800 PLC, with the following features:
-            • Real-time data via Modbus TCP/IP and MQTT.
-            • Data logging: PostgreSQL, Monitoring: Flask app on Render.
-            • HMI for local control (status, start/stop, alerts).
-            • ML model estimates processing time
-    </p>
-        <p class="tech-used">Technologies Used: HTML, Connected Components Workbench, Python, VS Code, Factory I/O, Datagrip, PostgreSQL database, 	Render, Allen-Bradley Micro 800, GitHub </p>
-	<p class="tech-used">Concepts Learnt: Communication Protocols, PLC Programming, Sensor and Actuator Integration, Digital Twin, Machine Learning, based data management, IOT, AI/ML in 	predictive maintainance, Cyber Physical Syatems </p>
-	<img src="SortingLine\Proj_Img.png" alt="PLC Connections 	"width="300" height="200">
-	<img src="SortingLine\Front_end.png" alt="PLC Connections 	"width="300" height="200">
-	<img src="SortingLine\System_Architecture.png" alt="PLC 	Connections "width="600" height="200">
-	
+        <p>This project focused on developing a system that sorts packages by color using a Micro800 PLC. Key features include:</p>
+        <ul>
+            <li>Real-time data via Modbus TCP/IP and MQTT</li>
+            <li>Data logging with PostgreSQL and monitoring through a Flask app on Render</li>
+            <li>HMI for local control (status, start/stop, alerts)</li>
+            <li>ML model for processing time estimation</li>
+        </ul>
         
-	
+        <!-- Card for Technologies Used -->
+        <div class="card">
+            <div class="card-title">Technologies Used:</div>
+            <div class="card-content">
+                HTML, Connected Components Workbench, Python, VS Code, Factory I/O, Datagrip, PostgreSQL, Render, Allen-Bradley Micro 800, GitHub
+            </div>
+        </div>
+
+        <!-- Card for Concepts Learned -->
+        <div class="card">
+            <div class="card-title">Concepts Learned:</div>
+            <div class="card-content">
+                Communication Protocols, PLC Programming, Sensor and Actuator Integration, Digital Twin, Machine Learning-based Data Management, IoT, AI/ML in Predictive Maintenance, Cyber-Physical Systems
+            </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="image-container">
+            <img src="SortingLine/Proj_Img.png" alt="PLC Connections">
+            <img src="SortingLine/Front_end.png" alt="Frontend UI">
+            <img src="SortingLine/System_Architecture.png" alt="System Architecture">
+        </div>
     </div>
+
 </body>
 </html>

@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Servo Control </title>
+    <title>Visual Servo Control</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f8ff; /* Light Blue Background */
@@ -14,53 +16,181 @@
             line-height: 1.6; /* Improve Line Spacing */
         }
 
+        /* Container Style */
         .container {
-            width: 80%; /* Responsive Width */
-            max-width: 900px; /* Maximum Width */
-            margin: 20px auto; /* Center the Content */
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
             padding: 30px;
-            background-color: #fff; /* White Card Background */
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle Shadow */
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* Header Styles */
         h1 {
-            color: #333;
+            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font */
+            color: #0e253c; /* Dark Blue */
             text-align: center;
             margin-bottom: 20px;
+            font-size: 2em;
         }
 
+        /* Paragraph Styles */
         p {
             margin-bottom: 15px;
+            font-size: 1.1em;
+            text-align: left;
         }
 
+        /* Anchor (Links) Styles */
         a {
-            color: #007bff; /* Bootstrap Blue */
+            color: #007bff;
             text-decoration: none;
+            font-weight: bold;
         }
 
         a:hover {
             text-decoration: underline;
         }
 
-        .tech-used {
-            font-style: italic;
-            color: #777;
+        /* Card Styles */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .card-title {
+            font-size: 1.3em; /* Reduced font size */
+            color: #0e253c;
+            margin-bottom: 10px;
+        }
+
+        .card-content {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        /* Image Styling */
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 12px;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        /* List Styling */
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            font-size: 1.1em;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                margin-bottom: 15px;
+            }
+
+            p, .card-content {
+                font-size: 1em;
+            }
+
+            ul {
+                font-size: 1em;
+            }
+
+            .image-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .image-container img {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            p, .card-content {
+                font-size: 0.9em;
+            }
+
+            a {
+                font-size: 0.9em;
+            }
+
+            .image-container {
+                gap: 10px;
+            }
+
+            ul {
+                font-size: 0.95em;
+            }
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-	<p><a href="portfolio.html">Back to Home</a></p>
+        <p><a href="portfolio.html">Back to Home</a></p>
         <h1>Visual Servo Control of a 7-Link Kinova Gen3 Robot Arm</h1>
-        My role involves developing a closed-loop control system to track a micro swimmer using an ultrasound probe and a 7-link Kinova Gen3 robot arm, as it navigates a viscous medium under vibration forces.</p>
-        <p class="tech-used">Technologies Used: MATLAB, OpenCV, GStreamer, ROS, Kinova Gen 3 Robot, Data-Driven Controllers</p>
+        <p>My role involves developing a closed-loop control system to track a micro swimmer using an ultrasound probe and a 7-link Kinova Gen3 robot arm, as it navigates a viscous medium under vibration forces.</p>
         
-	<p class="tech-used">Concepts Learnt: Camera Caliberation, Joint space and Task space control,Trajectory Planning, Inverse Kinematics, 	Object 	Detection </p>
-	<img src="VisualServoControl/Pic.png" width="300" height="200">  
+        <!-- Card for Technologies Used -->
+        <div class="card">
+            <div class="card-title">Technologies Used:</div>
+            <div class="card-content">
+                MATLAB, OpenCV, GStreamer, ROS, Kinova Gen 3 Robot, Data-Driven Controllers
+            </div>
+        </div>
 
+        <!-- Card for Concepts Learned -->
+        <div class="card">
+            <div class="card-title">Concepts Learned:</div>
+            <div class="card-content">
+                Camera Calibration, Joint Space and Task Space Control, Trajectory Planning, Inverse Kinematics, Object Detection
+            </div>
+        </div>
 
-        
+        <!-- Image Gallery -->
+        <div class="image-container">
+            <img src="VisualServoControl/Pic.png" alt="Visual Servo Control">
+        </div>
     </div>
+
 </body>
 </html>
