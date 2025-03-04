@@ -22,8 +22,8 @@
             text-align: center;
             color: #0e253c;
             font-weight: bold;
-            font-size: 2.5em;
-            margin: 0 0 10px 0; /* Reduced bottom margin */
+            font-size: 2.2em;
+            margin: 0 0 10px 0;
         }
 
         h2 {
@@ -31,28 +31,28 @@
             color: #0e253c;
             font-weight: bold;
             font-size: 1.5em;
-            margin: 10px 0; /* Reduced top and bottom margins */
+            margin: 10px 0;
         }
 
         .header-info p {
-            margin: 3px 0; /* Reduced margin */
-            font-size: 1.2em;
+            margin: 3px 0;
+            font-size: 1.1em;
             text-align: center;
             color: #0e253c;
         }
 
         .header-info a {
             background-color: #0e253c;
-            padding: 8px 16px; /* Reduced padding */
+            padding: 8px 12px;
             color: #fff;
             border: none;
             border-radius: 5px;
             font-weight: bold;
             font-size: .8em;
-            margin: 3px 8px; /* Reduced margin */
+            margin: 3px 4px;
             text-decoration: none;
             transition: background-color 0.3s ease;
-            display: inline-block; /* Ensures proper spacing */
+            display: inline-block;
         }
 
         .header-info a:hover {
@@ -60,32 +60,33 @@
         }
 
         .container {
+            width: 95%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px; /* Reduced padding */
+            padding: 15px;
         }
 
         /* Header specific adjustments */
         header.section {
-            margin-bottom: 15px; /* Reduced bottom margin */
-            padding-bottom: 0; /* Remove bottom padding */
+            margin-bottom: 15px;
+            padding-bottom: 0;
         }
 
         /* 2-Column Layout */
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 25px; /* Slightly reduced gap */
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .section {
-            margin-bottom: 25px; /* Reduced margin */
+            margin-bottom: 20px;
             text-align: center;
         }
 
         .footer {
             text-align: center;
-            margin-top: 25px;
+            margin-top: 20px;
             font-size: 14px;
             color: #7f8c8d;
             border-top: 1px solid #34495e;
@@ -93,20 +94,25 @@
         }
 
         /* Mobile Responsiveness */
-        @media screen and (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-
+        @media screen and (min-width: 768px) {
             .grid-container {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .header-info a {
+                padding: 8px 16px;
+                margin: 3px 8px;
             }
         }
 
         /* Card-like design for each section */
         .card {
             background-color: #5d6d7e;
-            padding: 20px;
+            padding: 15px;
             border-radius: 5px;
             margin-bottom: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -125,24 +131,25 @@
         }
 
         .date-location {
-            font-size: 1.1em;
+            font-size: 1em;
             color: #bdc3c7;
-            margin: 5px 0; /* Reduced margin */
+            margin: 5px 0;
             font-weight: normal;
         }
 
-        /* Dropdown Styles */
+        /* Dropdown Styles - Modified for mobile */
         .dropdown {
-            margin-bottom: 12px; /* Reduced margin */
+            margin-bottom: 12px;
+            position: relative;
         }
 
         .dropdown button {
             background-color: transparent;
             color: #e4eff6;
-            font-size: 1.25em;
+            font-size: 1.15em;
             font-weight: bold;
             text-decoration: none;
-            padding: 8px 20px; /* Reduced padding */
+            padding: 8px 15px;
             cursor: pointer;
             display: inline-block;
             border: none;
@@ -151,33 +158,45 @@
             transition: color 0.3s ease, border-bottom-color 0.3s ease;
         }
 
-        .dropdown button:hover {
+        .dropdown button:hover, .dropdown button:active, .dropdown button:focus {
             color: #2980b9;
             border-bottom-color: #2980b9;
         }
 
-        /* Hover to display dropdown */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
+        /* Change to tap/click for mobile */
         .dropdown-content {
             display: none;
             background-color: rgba(44, 62, 80, 0.95);
-            padding: 12px 18px; /* Reduced padding */
+            padding: 12px 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             border-radius: 5px;
+            max-width: 95%;
+            margin: 0 auto;
+        }
+
+        .dropdown:active .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            display: block;
+        }
+
+        /* Show on hover for desktop */
+        @media (hover: hover) {
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
         }
 
         .dropdown-content ul {
             list-style: none;
             padding-left: 0;
-            margin: 5px 0; /* Added margin control */
+            margin: 5px 0;
         }
 
         .dropdown-content ul li {
             margin-bottom: 10px;
             color: #bdc3c7;
+            text-align: center;
+            font-size: 0.95em;
         }
 
         .dropdown-content ul li a {
@@ -194,24 +213,27 @@
         /* Projects Section */
         .projects-list {
             list-style: none;
-            padding-left: 0; /* Removed padding */
-            margin: 5px 0; /* Adjusted margin */
-            font-size: 1.2em;
+            padding-left: 0;
+            margin: 5px 0;
+            font-size: 1.1em;
         }
 
         .projects-list li {
             color: #f0f4f8;
             font-weight: bold;
-            margin-bottom: 10px; /* Reduced margin */
+            margin-bottom: 15px;
+            position: relative;
         }
 
         .projects-list li a {
             color: #f2f3f5;
             text-decoration: underline;
-            text-underline-offset: 8px; /* Reduced offset */
+            text-underline-offset: 6px;
             text-decoration-color: #2980b9;
             text-decoration-thickness: 1px;
             transition: color 0.3s ease;
+            display: inline-block;
+            padding-bottom: 5px;
         }
 
         .projects-list li a:hover {
@@ -221,15 +243,16 @@
 
         .project-link {
             position: relative;
-            padding-right: 40px; /* Reduced space for the arrow */
+            padding-right: 25px;
+            word-break: break-word;
+            hyphens: auto;
         }
 
         .project-link::after {
-            content: '  \2197 '; /* Unicode for slant arrow */
-            position: bottom;
+            content: '  \2197 ';
+            position: absolute;
             right: 0;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 0;
             font-size: 1em;
             opacity: 1;
             color: #3b88bc;
@@ -241,98 +264,36 @@
             opacity: 1;
         }
 
-        .project-link {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-            display: inline-block;
-            padding: 5px;
-        }
-
-        .project-summary {
-            display: none;
-            position: absolute;
-            left: 0;
-            top: 25px;
-            background: #f8f9fa;
-            color: #333;
-            padding: 10px;
-            border-radius: 5px;
-            width: 300px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 100;
-        }
-
-        .projects-list li:hover .project-summary {
-            display: block;
-        }
-
-        /* Center the button */
-        .resume-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 15px; /* Reduced margin */
-        }
-
-        /* Button styling */
-        .resume-button {
-            display: inline-block;
-            background-color: #f0f0f0;
-            padding: 10px 18px; /* Reduced padding */
-            border-radius: 8px;
-            text-decoration: none;
-            border: 2px solid #ccc;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease, transform 0.2s;
+        .projects-list .dropdown-content {
+            width: 90%;
+            left: 50%;
+            transform: translateX(-0%);
             text-align: center;
         }
 
-        .resume-button:hover {
-            background-color: #e0e0e0;
-            transform: scale(1.05);
+        .projects-list .dropdown-content p {
+            margin: 5px 0;
+            font-size: 0.9em;
         }
 
-        /* Resume text inside a box */
-        .resume-text {
-            display: inline-block;
-            background-color: #333;
-            color: white;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 4px;
-        }
-
-        /* About Me Text */
-        .typing-text {
-            font-family: 'Courier New', Courier, monospace;
-            color: #243c54;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid #2c3e50;
-            width: 0;
-            max-width: 100%;
-            animation: typing 4s steps(60) 1s forwards, blink 0.75s step-end infinite;
-        }
-
-        /* Container for typing lines */
+        /* About Me Text - FIXED TYPING ANIMATION */
         .typing-container {
             width: 100%;
             height: auto;
             display: block;
-            margin-top: 10px; /* Added margin */
+            margin-top: 10px;
         }
 
-        /* Styling for each line */
         .typing-line {
             font-family: 'Courier New', Courier, monospace;
             color: #2c3e50;
             white-space: nowrap;
             overflow: hidden;
             width: 0;
-            animation: typing 5s steps(60) 1s forwards, blink 0.75s step-end infinite;
+            animation: typing 2s steps(60) forwards, blink 0.75s step-end infinite;
             display: block;
             margin-bottom: 0.1em;
+            text-align: center;
         }
 
         /* Delay each line by its index */
@@ -341,11 +302,17 @@
         }
 
         .typing-line:nth-child(2) {
-            animation-delay: 5s;
+            animation-delay: 2s;
         }
 
         .typing-line:nth-child(3) {
-            animation-delay: 10s;
+            animation-delay: 4s;
+        }
+        .typing-line:nth-child(4) {
+            animation-delay: 6s;
+        }
+        .typing-line:nth-child(5) {
+            animation-delay: 8s;
         }
 
         /* Animation for typing */
@@ -358,11 +325,45 @@
             }
         }
 
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Media query for small screens */
+        @media screen and (max-width: 767px) {
+            .typing-line {
+                white-space: normal;
+                width: 100%;
+                animation: none;
+                opacity: 1;
+            }
+            
+            .typing-line:nth-child(1),
+            .typing-line:nth-child(2),
+            .typing-line:nth-child(3),
+            .typing-line:nth-child(4),
+            .typing-line:nth-child(5){
+                animation-delay: 0s;
+            }
+        }
+
         /* Color for About Me */
         .about-me-text {
             color: #0e253c;
-            margin: 10px 0; /* Added margin control */
+            margin: 10px 0;
         }
+
+        /* Make buttons easier to tap on mobile */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px 0;
+        }
+        
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -373,11 +374,11 @@
             <h1 style="margin: 0;">Sakshi Shah</h1>
             <div class="header-info">
                 <p style="margin: 5px 0;">Masters in Mechanical Engineering | North Carolina State University</p>
-                <p style="margin: 5px 0;">
-                    <a href="mailto:sshah37@ncsu.edu" class="btn">Email</a> | 
-                    <a href="https://www.linkedin.com/in/sakshi-5hah/" target="_blank" class="btn">LinkedIn</a> | 
+                <div class="btn-container">
+                    <a href="mailto:sshah37@ncsu.edu" class="btn">Email</a>
+                    <a href="https://www.linkedin.com/in/sakshi-5hah/" target="_blank" class="btn">LinkedIn</a>
                     <a href="SakshiShah_Resume.pdf" target="_blank" class="resume-card">Resume</a>
-                </p>
+                </div>
             </div>
         </header>
 
@@ -386,8 +387,10 @@
             <h3 class="about-me-text">About Me</h3>
             <div class="typing-container">
                 <p class="typing-line">Master's student in Mechanical Engineering, focusing on dynamics and control systems.</p>
-                <p class="typing-line">I am proficient in hardware integration, PLC programming, robot path planning, stability analysis, and dynamic system modeling.</p>
-                <p class="typing-line">My experience at Tioga Cardiovascular and Eaton has honed my skills in automation, design, and process engineering.</p>
+                <p class="typing-line">I am proficient in hardware integration, PLC programming, robot path planning, stability analysis,</p>
+                <p class="typing-line">and dynamic system modeling.</p>
+                <p class="typing-line">My experience at Tioga Cardiovascular and Eaton has honed my skills in automation, design,</p>
+                <p class="typing-line">and process engineering.</p>
             </div>
         </section>
 
@@ -460,7 +463,7 @@
                             <a href="VisualServoControl.html" class="project-link" target="_blank">Visual Servo Control of a 7-link Kinova Gen3 Robot Arm</a>
                             <div class="dropdown-content">
                                 <p>MATLAB, OpenCV, GStreamer, ROS, Kinova Gen3 Robot</p>
-                                <p>Joint space and Task space control ,Trajectory Planning (PID,MPC),Numerical Optimization, Inverse Kinematics, Camera Caliberation, Image Processing</p>
+                                <p>Joint space and Task space control, Trajectory Planning (PID,MPC), Numerical Optimization, Inverse Kinematics, Camera Caliberation, Image Processing</p>
                             </div>
                         </li>
                         <li class="dropdown">
@@ -491,8 +494,6 @@
                                 <p>PID Controller Design, State Space Representation, Open and Closed Loop Transfer Function, Nyquist Diagram, Root Locus Staility Analysis, Controllability and Observability</p>
                             </div>
                         </li>
-                    
-                        
                         <li class="dropdown">
                             <a href="SpaceCraft_Dyn.html" class="project-link" target="_blank">Modeling and Simulation of Spacecraft Attitude Dynamics</a>
                             <div class="dropdown-content">
@@ -518,11 +519,3 @@
     </div>
 </body>
 </html>
-
-<!-- <li class="dropdown">
-    <a href="VibrationAbsorber.html" class="project-link" target="_blank">Modeling Tuned Vibration Absorber to Optimize Rider Comfort</a>
-    <div class="dropdown-content">
-        <p>MATLAB</p>
-        <p>Quater Car Model, Bode Plot ,Active and Passive Vibration Damping</p>
-    </div>
-</li> -->
