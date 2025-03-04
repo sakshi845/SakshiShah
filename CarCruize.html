@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Servo Control</title>
+    <title>Smart Sorting Line</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Global Styles */
@@ -13,7 +13,7 @@
             color: #333; /* Dark Text for Readability */
             margin: 0;
             padding: 0;
-            line-height: 1.6; /* Improve Line Spacing */
+            line-height: 1.6;
         }
 
         /* Container Style */
@@ -40,7 +40,7 @@
         p {
             margin-bottom: 15px;
             font-size: 1.1em;
-            text-align: left;
+            text-align: left; /* Align text to the left */
         }
 
         /* Anchor (Links) Styles */
@@ -59,8 +59,8 @@
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            margin: 15px 0;
+            padding: 15px; /* Reduced padding */
+            margin: 15px 0; /* Reduced margin */
         }
 
         .card-title {
@@ -70,10 +70,17 @@
         }
 
         .card-content {
-            font-size: 1em;
+            font-size: 1em; /* Reduced font size */
             color: #555;
             line-height: 1.6;
             text-align: left;
+        }
+
+        /* List Styling */
+        ul {
+            margin: 10px 0;
+            padding-left: 20px;
+            font-size: 1.1em;
         }
 
         /* Image Styling */
@@ -95,13 +102,6 @@
 
         .image-container img:hover {
             transform: scale(1.05);
-        }
-
-        /* List Styling */
-        ul {
-            margin: 10px 0;
-            padding-left: 20px;
-            font-size: 1.1em;
         }
 
         /* Responsive Design for Smaller Screens */
@@ -167,14 +167,18 @@
 
     <div class="container">
         <p><a href="portfolio.html">Back to Home</a></p>
-        <h1>Visual Servo Control of a 7-Link Kinova Gen3 Robot Arm</h1>
-        <p>My role involves developing a closed-loop control system to track a micro swimmer using an ultrasound probe and a 7-link Kinova Gen3 robot arm, as it navigates a viscous medium under vibration forces.</p>
+        <h1> Design of an Automobile Cruise Control system</h1>
+        <p>This project designs a state-feedback controller for a car cruise control system using control
+            engineering principles. The open-loop transfer function was derived and analyzed to determine the desired
+            closed-loop behavior. A desired characteristic equation was computed based on desired parameters, and a
+            state-feedback controller was designed to achieve the targeted car dynamics.</p>
+
         
         <!-- Card for Technologies Used -->
         <div class="card">
             <div class="card-title">Software Used:</div>
             <div class="card-content">
-                MATLAB, OpenCV, GStreamer, ROS, Kinova Gen 3 Robot, Data-Driven Controllers
+                MATLAB, Simulink
             </div>
         </div>
 
@@ -182,13 +186,13 @@
         <div class="card">
             <div class="card-title">Concepts Learned:</div>
             <div class="card-content">
-                Camera Calibration, Joint Space and Task Space Control, Trajectory Planning, Inverse Kinematics, Object Detection
+                Communication Protocols, PLC Programming, Sensor and Actuator Integration, Digital Twin, Machine Learning-based Data Management, IoT, AI/ML in Predictive Maintenance, Cyber-Physical Systems
             </div>
         </div>
 
         <!-- Image Gallery -->
         <div class="image-container">
-            <img src="VisualServoControl/Pic.png" alt="Visual Servo Control">
+            <img src="CarCruize_Simulink.png" alt="PLC Connections">
         </div>
     </div>
 
