@@ -363,6 +363,94 @@
             gap: 8px;
             margin: 10px 0;
         }
+
+ /* Index Navigation Styles */
+ .index-navigation {
+            background-color: #0e253c;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .index-nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .index-nav-link {
+            color: #f0f4f8;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1em;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .index-nav-link:hover {
+            background-color: #2980b9;
+            color: #ffffff;
+        }
+
+        /* Smooth Scroll Behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Offset for fixed navigation */
+        section {
+            scroll-margin-top: 60px;
+        }
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .skills-category {
+            flex-basis: calc(50% - 10px);
+            margin-bottom: 15px;
+        }
+
+        .skills-category h4 {
+            color: #0e253c;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-tag {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background-color: #2980b9;
+        }
+
+        @media screen and (max-width: 768px) {
+            .skills-category {
+                flex-basis: 100%;
+            }
+        }
+
+
         
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -370,6 +458,16 @@
 
 <body>
     <div class="container">
+        <!-- Index Navigation -->
+        <nav class="index-navigation">
+            <div class="index-nav-container">
+                <a  href="#about-me" class="index-nav-link">About Me</a>
+                <a href="#professional-experience" class="index-nav-link">Experience</a>
+                <a href="#projects" class="index-nav-link">Projects</a>
+                <a href="#skills" class="index-nav-link">Skills</a>
+            </div>
+        </nav>
+
         <header class="section" style="padding: 10px 0;">
             <h1 style="margin: 0;">Sakshi Shah</h1>
             <div class="header-info">
