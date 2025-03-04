@@ -374,38 +374,66 @@
         }
 
   /* Minimalist Vertical Index Navigation */
-  .index-navigation {
-            position: fixed;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            padding: 0;
-            z-index: 100;
-        }
+.index-navigation {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    padding: 0;
+    z-index: 100;
+}
 
-        .index-nav-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+.index-nav-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 
-        .index-nav-link {
-            font-family: 'Courier New', Courier, monospace;
-            color: #0e253c;
-            text-decoration: none;
-            font-size: 1em;
-            transition: color 0.3s ease;
-            writing-mode: vertical-lr;
-            text-orientation: mixed;
-            transform: rotate(180deg);
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
-        }
+.index-nav-link {
+    font-family: 'Courier New', Courier, monospace;
+    color: #0e253c;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
 
-        .index-nav-link:hover {
-            color: #2980b9;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
-        }
+.index-nav-link:hover {
+    color: #2980b9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/* Mobile-Friendly Adjustments */
+@media screen and (max-width: 767px) {
+    /* Adjust positioning for smaller screens */
+    .index-navigation {
+        left: 10px; /* Move to the left slightly */
+        top: 10px; /* Position the navigation at the top */
+        transform: none; /* Remove vertical centering */
+    }
+
+    /* Change the layout to horizontal for mobile */
+    .index-nav-container {
+        display: flex;
+        flex-direction: row; /* Change layout to horizontal */
+        justify-content: center; /* Center the links horizontally */
+        gap: 15px; /* Add space between links */
+    }
+
+    .index-nav-link {
+        font-size: 0.9em; /* Slightly smaller font size for mobile */
+        writing-mode: initial; /* Reset writing mode to horizontal */
+        transform: rotate(0deg); /* Remove rotation */
+    }
+
+    .index-nav-link:hover {
+        color: #2980b9;
+    }
+}
 
         /* Software Skills Section */
         .software-skills {
