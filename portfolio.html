@@ -109,11 +109,11 @@
             }
         }
 
-        /* Card-like design for each section */
+        /* Card-like design for each section  5d6d7e*/
         .card {
             background-color: #5d6d7e;
             padding: 15px;
-            border-radius: 5px;
+            border-radius: 15px;
             margin-bottom: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             text-align: center;
@@ -229,7 +229,7 @@
 
         .projects-list li a {
             color: #f2f3f5;
-            text-decoration: underline;
+            text-decoration: none;
             text-underline-offset: 6px;
             text-decoration-color: #2980b9;
             text-decoration-thickness: 1px;
@@ -240,7 +240,7 @@
 
         .projects-list li a:hover {
             color: #2980b9;
-            text-decoration: underline;
+            text-decoration: none;
         }
 
         .project-link {
@@ -262,7 +262,7 @@
 
         .project-link:hover::after {
             color: #2980b9;
-            text-decoration: underline;
+            text-decoration: none;
             opacity: 1;
         }
 
@@ -275,7 +275,7 @@
 
         .projects-list .dropdown-content p {
             margin: 5px 0;
-            font-size: 0.9em;
+            font-size: 0.7em;
         }
 
         /* About Me Text - FIXED TYPING ANIMATION */
@@ -296,7 +296,7 @@
         }
 
         .typing-line {
-            font-family: 'Courier New', Courier, monospace;
+            /*font-family: 'Courier New', Courier, monospace;*/
             color: #2c3e50;
             white-space: nowrap;
             overflow: hidden;
@@ -379,7 +379,7 @@
 .index-navigation {
     position: fixed;
     left: 5px;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     background: none;
     padding: 0;
@@ -395,25 +395,52 @@
 .index-nav-link {
     font-family: 'Courier New', Courier, monospace;
     color: #0e253c;
-    text-decoration: none;
+    text-decoration: underline;
     font-size: 1em;
     transition: color 0.3s ease;
     writing-mode: vertical-lr;
     text-orientation: mixed;
     transform: rotate(180deg);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow effect */
 }
 
 .index-nav-link:hover {
     color: #2980b9;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow effect */
 }
 
+/* Mobile-Friendly Adjustments */
+@media screen and (max-width: 767px) {
+    /* Adjust positioning for smaller screens */
+    .index-navigation {
+        left: 10px; /* Move to the left slightly */
+        top: 10px; /* Position the navigation at the top */
+        transform: none; /* Remove vertical centering */
+        position: relative;
+    }
 
+    /* Change the layout to horizontal for mobile */
+    .index-nav-container {
+        display: flex;
+        flex-direction: row; /* Change layout to horizontal */
+        justify-content: center; /* Center the links horizontally */
+        gap: 15px; /* Add space between links */
+    }
+
+    .index-nav-link {
+        font-size: 0.9em; /* Slightly smaller font size for mobile */
+        writing-mode: initial; /* Reset writing mode to horizontal */
+        transform: rotate(0deg); /* Remove rotation */
+    }
+
+    .index-nav-link:hover {
+        color: #2980b9;
+    }
+}
 
         /* Software Skills Section */
         .software-skills {
-            font-family: 'Courier New', Courier, monospace;
+            /*font-family: 'Courier New', Courier, monospace;*/
             color: #0e253c;
             text-align: center;
             font-size: 1em;
@@ -421,9 +448,11 @@
         }
         #skills{
             background-color:  #fff3e6; /* Light background with slight transparency */
-            padding: 20px; /* Adds spacing inside the section */
+            padding: 10px; /* Adds spacing inside the section */
             border-radius: 10px; /* Rounded corners */
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            margin-right: 10px;
+            margin-left:10px;
         }    
 
         
@@ -473,7 +502,7 @@
 
                  <!-- Minimal Software Skills Section -->
                  <section id="skills" class="section">
-                    <div class="software-skills"> Skills : 
+                    <div class="software-skills"> <p>Software Skills</p> 
                         SOLIDWORKS • AutoCAD • Autodesk Fusion 360 • Autodesk Inventor • ANSYS Mechanical • OpenSim • SAP • MATLAB • Simulink •
                         Wolfram Mathematica • Python • Excel Visual Basics • Power Apps • Latex • PreForm • Connected Components Workbench
                      
