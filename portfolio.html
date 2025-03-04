@@ -277,6 +277,15 @@
         }
 
         /* About Me Text - FIXED TYPING ANIMATION */
+
+        #about-me {
+            background-color:  #f8f9fa; /* Light background with slight transparency */
+            padding: 20px; /* Adds spacing inside the section */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        }    
+
+
         .typing-container {
             width: 100%;
             height: auto;
@@ -364,96 +373,59 @@
             margin: 10px 0;
         }
 
- /* Index Navigation Styles */
- .index-navigation {
-            background-color: #0e253c;
-            padding: 10px 0;
-            margin-bottom: 20px;
-            position: sticky;
-            top: 0;
+  /* Minimalist Vertical Index Navigation */
+  .index-navigation {
+            position: fixed;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            padding: 0;
             z-index: 100;
         }
 
         .index-nav-container {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .index-nav-link {
-            color: #f0f4f8;
+            font-family: 'Courier New', Courier, monospace;
+            color: #0e253c;
             text-decoration: none;
-            font-weight: bold;
             font-size: 1em;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: color 0.3s ease;
+            writing-mode: vertical-lr;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
         }
 
         .index-nav-link:hover {
-            background-color: #2980b9;
-            color: #ffffff;
+            color: #2980b9;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Shadow effect */
         }
 
-        /* Smooth Scroll Behavior */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Offset for fixed navigation */
-        section {
-            scroll-margin-top: 60px;
-        }
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        .skills-category {
-            flex-basis: calc(50% - 10px);
-            margin-bottom: 15px;
-        }
-
-        .skills-category h4 {
+        /* Software Skills Section */
+        .software-skills {
+            font-family: 'Courier New', Courier, monospace;
             color: #0e253c;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1em;
+            line-height: 1.5;
         }
-
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            list-style: none;
-            padding: 0;
-        }
-
-        .skill-tag {
-            background-color: #3498db;
-            color: #ffffff;
-            padding: 6px 10px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            transition: background-color 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background-color: #2980b9;
-        }
-
-        @media screen and (max-width: 768px) {
-            .skills-category {
-                flex-basis: 100%;
-            }
-        }
-
+        #skills{
+            background-color:  #fff3e6; /* Light background with slight transparency */
+            padding: 20px; /* Adds spacing inside the section */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        }    
 
         
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -461,12 +433,13 @@
         <!-- Index Navigation -->
         <nav class="index-navigation">
             <div class="index-nav-container">
-                <a  href="#about-me" class="index-nav-link">About Me</a>
+                <a href="#about-me" class="index-nav-link">About</a>
                 <a href="#professional-experience" class="index-nav-link">Experience</a>
                 <a href="#projects" class="index-nav-link">Projects</a>
                 <a href="#skills" class="index-nav-link">Skills</a>
             </div>
         </nav>
+
 
         <header class="section" style="padding: 10px 0;">
             <h1 style="margin: 0;">Sakshi Shah</h1>
@@ -482,7 +455,7 @@
 
         <!-- About Me Section -->
         <div class="container">
-        <section class="section" style="margin-top: 0;">
+        <section id="about-me" section class="section" style="margin-top: 0;">
             <h3 class="about-me-text">About Me</h3>
             <div class="typing-container">
                 <p class="typing-line">Master's student in Mechanical Engineering, focusing on dynamics and control systems.
@@ -494,10 +467,17 @@
         </section>
         </div>
 
+                 <!-- Minimal Software Skills Section -->
+                 <section id="skills" class="section">
+                    <div class="software-skills"> Skills : 
+                        Python • MATLAB • ROS • OpenCV • SolidWorks • ANSYS • PLC • HTML/CSS • SQL
+                    </div>
+                </section>
+
         <!-- 2-Column Grid Layout -->
         <div class="grid-container">
             <!-- Professional Experience Section -->
-            <section class="section">
+            <section id="professional-experience" section class="section">
                 <h2>Professional Experience</h2>
                 <div class="card">
                     <!-- Research Assistant -->
@@ -555,7 +535,7 @@
                 </div>
             </section>
 
-            <section class="section">
+            <section id="projects" section class="section">
                 <h2>Projects</h2>
                 <div class="card">
                     <ul class="projects-list">
