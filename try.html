@@ -1,154 +1,624 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sakshi Shah's Professional Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* General Styles */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f6f9;
-            color: #2c3e50;
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #f0f4f8;
             margin: 0;
             padding: 0;
-            line-height: 1.8;
+            line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cdefs%3E%3Cpattern id='smallGrid' width='10' height='10' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 10 0 L 0 0 L 0 10' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='0.5'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%' height='100%' fill='url(%23smallGrid)'/%3E%3C/svg%3E");
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 30px 20px;
-        }
-        h1, h2 {
-            text-align: center;
-            font-weight: 700;
-        }
+
         h1 {
-            font-size: 3em;
-            color: #34495e;
-        }
-        h2 {
+            text-align: center;
+            color: #0e253c;
+            font-weight: bold;
             font-size: 2.2em;
-            margin-bottom: 20px;
-            color: #2980b9;
+            margin: 0 0 10px 0;
         }
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        .btn-container a {
-            background-color: #2980b9;
-            padding: 12px 24px;
-            color: #fff;
-            border-radius: 6px;
-            font-size: 1.1em;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-        .btn-container a:hover {
-            background-color: #1a5276;
-        }
-        .about-me-section, .experience-card, .project-card {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            margin-bottom: 25px;
-        }
-        .about-me-section {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-        .about-me-image {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .experience-card h3, .project-card h3 {
-            color: #2c3e50;
+
+        h2 {
+            text-align: center;
+            color: #0e253c;
+            font-weight: bold;
             font-size: 1.5em;
+            margin: 10px 0;
         }
-        .projects-grid {
+
+        .header-info p {
+            margin: 3px 0;
+            font-size: 1.1em;
+            text-align: center;
+            color: #0e253c;
+        }
+
+        .header-info a {
+            background-color: #0e253c;
+            padding: 8px 12px;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: .8em;
+            margin: 3px 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+
+        .header-info a:hover {
+            background-color: #2980b9;
+        }
+
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+
+        /* Header specific adjustments */
+        header.section {
+            margin-bottom: 15px;
+            padding-bottom: 0;
+        }
+
+        /* 2-Column Layout */
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: 1fr;
             gap: 20px;
         }
+
+        .section {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 14px;
-            color: #777;
-            padding-top: 20px;
-            border-top: 2px solid #ddd;
+            color: #7f8c8d;
+            border-top: 1px solid #34495e;
+            padding-top: 15px;
         }
+
+        /* Mobile Responsiveness */
+        @media screen and (min-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5em;
+            }
+            
+            .header-info a {
+                padding: 8px 16px;
+                margin: 3px 8px;
+            }
+        }
+
+        /* Card-like design for each section  5d6d7e*/
+
+
+        .card h3 {
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            color: #f0f4f8;
+        }
+
+        .card p {
+            margin-bottom: 8px;
+            color: #bdc3c7;
+        }
+
+        .date-location {
+            font-size: 1em;
+            color: #bdc3c7;
+            margin: 5px 0;
+            font-weight: normal;
+        }
+
+     
+
+
+
+        /* About Me Text - FIXED TYPING ANIMATION */
+
+        #about-me {
+            background-color:  #f8f9fa; /* Light background with slight transparency */
+            padding: 20px; /* Adds spacing inside the section */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        }    
+
+
+        .typing-container {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .typing-line {
+            /*font-family: 'Courier New', Courier, monospace;*/
+            color: #2c3e50;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 2s steps(60) forwards, blink 0.75s step-end infinite;
+            display: block;
+            margin-bottom: 0.1em;
+            text-align: center;
+        }
+
+        /* Delay each line by its index */
+        .typing-line:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .typing-line:nth-child(2) {
+            animation-delay: 2s;
+        }
+
+        .typing-line:nth-child(3) {
+            animation-delay: 4s;
+        }
+        .typing-line:nth-child(4) {
+            animation-delay: 6s;
+        }
+        .typing-line:nth-child(5) {
+            animation-delay: 8s;
+        }
+
+        /* Animation for typing */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Media query for small screens */
         @media screen and (max-width: 767px) {
-            .about-me-section {
-                flex-direction: column;
-                text-align: center;
+            .typing-line {
+                white-space: normal;
+                width: 100%;
+                animation: none;
+                opacity: 1;
             }
-            .about-me-image {
-                width: 160px;
-                height: 160px;
+            
+            .typing-line:nth-child(1),
+            .typing-line:nth-child(2),
+            .typing-line:nth-child(3),
+            .typing-line:nth-child(4),
+            .typing-line:nth-child(5){
+                animation-delay: 0s;
             }
         }
+
+        /* Color for About Me */
+        .about-me-text {
+            color: #0e253c;
+            margin: 10px 0;
+        }
+
+        /* Make buttons easier to tap on mobile */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+  /* Minimalist Vertical Index Navigation */
+.index-navigation {
+    position: fixed;
+    left: 5px;
+    top: 60%;
+    transform: translateY(-50%);
+    background: none;
+    padding: 0;
+    z-index: 100;
+}
+
+.index-nav-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.index-nav-link {
+    font-family: 'Courier New', Courier, monospace;
+    color: #0e253c;
+    text-decoration: underline;
+    font-size: 1em;
+    transition: color 0.3s ease;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow effect */
+}
+
+.index-nav-link:hover {
+    color: #2980b9;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Shadow effect */
+}
+
+/* Mobile-Friendly Adjustments */
+@media screen and (max-width: 767px) {
+    /* Adjust positioning for smaller screens */
+    .index-navigation {
+        left: 10px; /* Move to the left slightly */
+        top: 5px; /* Position the navigation at the top */
+        transform: none; /* Remove vertical centering */
+        position: relative;
+    }
+
+    /* Change the layout to horizontal for mobile */
+    .index-nav-container {
+        display: flex;
+        flex-direction: row; /* Change layout to horizontal */
+        justify-content: center; /* Center the links horizontally */
+        gap: 15px; /* Add space between links */
+    }
+
+    .index-nav-link {
+        font-size: 0.9em; /* Slightly smaller font size for mobile */
+        writing-mode: initial; /* Reset writing mode to horizontal */
+        transform: rotate(0deg); /* Remove rotation */
+    }
+
+    .index-nav-link:hover {
+        color: #2980b9;
+    }
+}
+
+        /* Software Skills Section */
+        .software-skills {
+            /*font-family: 'Courier New', Courier, monospace;*/
+            color: #0e253c;
+            text-align: center;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+        #skills{
+            background-color:  #fff3e6; /* Light background with slight transparency */
+            padding: 10px; /* Adds spacing inside the section */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+            margin-right: 10px;
+            margin-left:10px;
+        } 
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+            --accent-color: #2980b9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: 300;
+            border-bottom: 1px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+
+        .dropdown:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown-header:hover {
+            color: var(--accent-color);
+        }
+
+        .dropdown-title {
+            font-weight: 400;
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+
+        .dropdown-date {
+            font-size: 0.8em;
+            color: var(--secondary-color);
+        }
+
+        .dropdown-content {
+            display: none;
+            margin-top: 15px;
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+
+        .dropdown-content ul {
+            padding-left: 20px;
+        }
+
+        .dropdown.active .dropdown-content {
+            display: block;
+        }
+
+        /* Project Dropdown Styles */
+        .project-dropdown {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 20px;
+        }
+
+        .project-dropdown:last-child {
+            border-bottom: none;
+        }
+
+        .project-dropdown-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .project-dropdown-header:hover {
+            color: var(--accent-color);
+        }
+
+        .project-dropdown-title {
+            font-weight: 400;
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+
+        .project-dropdown-tech {
+            font-size: 0.8em;
+            color: var(--secondary-color);
+        }
+
+        .project-dropdown-content {
+            display: none;
+            margin-top: 15px;
+            color: var(--secondary-color);
+            font-weight: 300;
+        }
+
+        .project-dropdown.active .project-dropdown-content {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .dropdown-header, .project-dropdown-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .dropdown-date, .project-dropdown-tech {
+                margin-top: 5px;
+            }
+        }
+    </style>   
+
+        
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
-        <header>
-            <h1>Sakshi Shah</h1>
-            <p style="text-align: center; font-size: 1.2em; color: #555;">Masters in Mechanical Engineering | North Carolina State University</p>
-            <div class="btn-container">
-                <a href="mailto:sshah37@ncsu.edu">Email</a>
-                <a href="https://www.linkedin.com/in/sakshi-5hah/" target="_blank">LinkedIn</a>
-                <a href="SakshiShah_Resume.pdf" target="_blank">Resume</a>
+        <!-- Index Navigation -->
+        <nav class="index-navigation">
+            <div class="index-nav-container">
+                <a href="#about-me" class="index-nav-link">About</a>
+                <a href="#professional-experience" class="index-nav-link">Experience</a>
+                <a href="#projects" class="index-nav-link">Projects</a>
+                <a href="#skills" class="index-nav-link">Skills</a>
+            </div>
+        </nav>
+
+
+        <header class="section" style="padding: 10px 0;">
+            <h1 style="margin: 0;">Sakshi Shah</h1>
+            <div class="header-info">
+                <p style="margin: 5px 0;">Masters in Mechanical Engineering | North Carolina State University</p>
+                <div class="btn-container">
+                    <a href="mailto:sshah37@ncsu.edu" class="btn">Email</a>
+                    <a href="https://www.linkedin.com/in/sakshi-5hah/" target="_blank" class="btn">LinkedIn</a>
+                    <a href="SakshiShah_Resume.pdf" target="_blank" class="resume-card">Resume</a>
+                </div>
             </div>
         </header>
-        <section>
-            <h2>About Me</h2>
-            <div class="about-me-section">
-                <img src="placeholder-profile.jpg" alt="Sakshi Shah" class="about-me-image">
-                <p>Master's student in Mechanical Engineering, focusing on dynamics and control systems. Experienced in hardware integration, PLC programming, robot path planning, stability analysis, and dynamic system modeling. Previous work at Tioga Cardiovascular and Eaton sharpened skills in automation, design, and process engineering.</p>
+
+        <!-- About Me Section -->
+        <div class="container">
+        <section id="about-me" section class="section" style="margin-top: 0;">
+            <h3 class="about-me-text">About Me</h3>
+            <div class="typing-container">
+                <p class="typing-line">Master's student in Mechanical Engineering, focusing on dynamics and control systems.
+                I am proficient in hardware integration, PLC programming, robot path planning, stability analysis,
+                and dynamic system modeling.
+                <p class="typing-line">My experience at Tioga Cardiovascular and Eaton has honed my skills in automation, design,
+             and process engineering.</p>
             </div>
         </section>
-        <section>
-            <h2>Professional Experience</h2>
-            <div class="experience-card">
-                <h3>Research Assistant</h3>
-                <p class="date-location">Jan 2025 - Aug 2025 | Raleigh, NC</p>
-                <p>Enhancing exoskeleton mobility at the Neuromuscular Control and Robotics Lab by designing components for lateral movement and integrating necessary hardware.</p>
-            </div>
-            <div class="experience-card">
-                <h3>Process Development Intern</h3>
-                <p class="date-location">June 2023 - Aug 2023 | Raleigh, NC</p>
-                <p>Optimized the Transcatheter Mitral Valve replacement process, designed SLA fixtures, improved engineering drawings, and implemented quality checks for components.</p>
-            </div>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="placeholder-project1.jpg" alt="Project 1" class="project-image">
-                    <h3>Project 1 Title</h3>
-                    <p>Brief description highlighting key achievements and technologies used.</p>
-                    <a href="#" class="project-link">Learn More</a>
+        </div>
+
+                 <!-- Minimal Software Skills Section -->
+                 <section id="skills" class="section">
+                    <div class="software-skills"> <p>Software Skills</p> 
+                        SOLIDWORKS • AutoCAD • Autodesk Fusion 360 • Autodesk Inventor • ANSYS Mechanical • OpenSim • SAP • MATLAB • Simulink •
+                        Wolfram Mathematica • Python • Excel Visual Basics • Power Apps • Latex • PreForm • Connected Components Workbench
+                     
+                    </div>
+                </section>
+
+        <!-- 2-Column Grid Layout -->
+        <div class="grid-container">
+            <!-- Professional Experience Section -->
+            <section id="professional-experience">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="dropdown">
+                    <div class="dropdown-header">
+                        <h3 class="dropdown-title">Research Assistant</h3>
+                        <span class="dropdown-date">Jan 2025 - May 2025 | North Carolina State University</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>Research Assistant at the Neuromuscular Control and Robotics Lab, working on enhancing exoskeleton mobility.</li>
+                            <li>Designing and fabricating components to enable lateral movement in the exoskeleton.</li>
+                            <li>Integrating the necessary hardware for seamless functionality and performance improvement.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <img src="placeholder-project2.jpg" alt="Project 2" class="project-image">
-                    <h3>Project 2 Title</h3>
-                    <p>Brief description highlighting key achievements and technologies used.</p>
-                    <a href="#" class="project-link">Learn More</a>
+        
+                <div class="dropdown">
+                    <div class="dropdown-header">
+                        <h3 class="dropdown-title">Process Development Intern</h3>
+                        <span class="dropdown-date">May 2024 - August 2024 | Tioga Cardiovascular</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>Optimized manufacturing process for Transcatheter Mitral Valve replacement product.</li>
+                            <li>Designed SLA printed fixtures using SolidWorks for vibration damping and testing.</li>
+                            <li>Refined engineering drawings and integrated quality checks for components.</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </section>
+        
+                <div class="dropdown">
+                    <div class="dropdown-header">
+                        <h3 class="dropdown-title">Associate Engineer</h3>
+                        <span class="dropdown-date">August 2021 - June 2023 | Eaton</span>
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li>Improved process efficiency by 34% through Python and Excel VBA automation.</li>
+                            <li>Launched over five projects addressing cost-out, design, and manufacturing challenges.</li>
+                            <li>Led continuous improvement initiatives through cross-functional collaboration.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2 class="section-title">Projects</h2>
+                <div class="project-dropdown">
+                    <div class="project-dropdown-header">
+                        <h3 class="project-dropdown-title">Visual Servo Control of Kinova Gen3 Robot Arm</h3>
+                        <span class="project-dropdown-tech">MATLAB, OpenCV, ROS</span>
+                    </div>
+                    <div class="project-dropdown-content">
+                        <p>Implemented joint space and task space control with trajectory planning using PID and MPC techniques.</p>
+                        <p>Involved advanced areas including:</p>
+                        <ul>
+                            <li>Trajectory Planning (PID, MPC)</li>
+                            <li>Numerical Optimization</li>
+                            <li>Inverse Kinematics</li>
+                            <li>Camera Calibration</li>
+                            <li>Image Processing</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="project-dropdown">
+                    <div class="project-dropdown-header">
+                        <h3 class="project-dropdown-title">Nonlinear Controllers for Two-Link Robot Arm</h3>
+                        <span class="project-dropdown-tech">MATLAB, Simulink</span>
+                    </div>
+                    <div class="project-dropdown-content">
+                        <p>Designed and simulated non-linear controllers with comprehensive stability analysis.</p>
+                        <p>Key focus areas:</p>
+                        <ul>
+                            <li>Non-Linear Controller Design</li>
+                            <li>Stability Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <div class="project-dropdown">
+                    <div class="project-dropdown-header">
+                        <h3 class="project-dropdown-title">Remote Conveyor System Control</h3>
+                        <span class="project-dropdown-tech">Python, PLC, IoT</span>
+                    </div>
+                    <div class="project-dropdown-content">
+                        <p>Developed a smart sorting line with PLC programming, sensor integration, and IoT capabilities.</p>
+                        <p>Technologies and techniques used:</p>
+                        <ul>
+                            <li>Communication Protocols</li>
+                            <li>PLC Programming</li>
+                            <li>Sensor and Actuator Integration</li>
+                            <li>Digital Twin</li>
+                            <li>Machine Learning</li>
+                            <li>IoT and Predictive Maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        
+            <script>
+                // Dropdown functionality
+                document.querySelectorAll('.dropdown-header, .project-dropdown-header').forEach(header => {
+                    header.addEventListener('click', () => {
+                        const dropdown = header.closest('.dropdown, .project-dropdown');
+                        dropdown.classList.toggle('active');
+                    });
+                });
+            </script>
+        </div>
+
         <footer class="footer">
-            <p>&copy; 2025 Sakshi Shah</p>
+            
         </footer>
     </div>
 </body>
