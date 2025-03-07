@@ -245,22 +245,23 @@
 
         .project-link {
             position: relative;
-            padding-right: 25px;
+            padding-left: 25px; /* Change from padding-right to padding-left */
             word-break: break-word;
             hyphens: auto;
         }
 
-        .project-link::after {
-            content: '  \2197 ';
+        /* Replace the after pseudo-element with before */
+        .project-link::before {
+            content: '\2197  '; /* The arrow with some space after */
             position: absolute;
-            right: 0;
+            left: 0; /* Position at the left instead of right */
             top: 0;
             font-size: 1em;
             opacity: 1;
             color: #3b88bc;
         }
 
-        .project-link:hover::after {
+        .project-link:hover::before {
             color: #2980b9;
             text-decoration: none;
             opacity: 1;
@@ -439,21 +440,52 @@
 }
 
         /* Software Skills Section */
-        .software-skills {
-            /*font-family: 'Courier New', Courier, monospace;*/
-            color: #0e253c;
-            text-align: center;
-            font-size: 1em;
-            line-height: 1.5;
-        }
-        #skills{
-            background-color:  #fff3e6; /* Light background with slight transparency */
-            padding: 10px; /* Adds spacing inside the section */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-            margin-right: 10px;
-            margin-left:10px;
-        }    
+        .skills-title {
+    color: #0e253c;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.skill-category {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h4 {
+    color: #0e253c;
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center;
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 5px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category li {
+    color: #0e253c;
+    padding: 4px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
 
         
     </style>
@@ -502,10 +534,44 @@
 
                  <!-- Minimal Software Skills Section -->
                  <section id="skills" class="section">
-                    <div class="software-skills"> <p>Software Skills</p> 
-                        SOLIDWORKS • AutoCAD • Autodesk Fusion 360 • Autodesk Inventor • ANSYS Mechanical • OpenSim • SAP • MATLAB • Simulink •
-                        Wolfram Mathematica • Python • Excel Visual Basics • Power Apps • Latex • PreForm • Connected Components Workbench
-                     
+                    <h3 class="skills-title">Software Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>CAD & 3D Modeling</h4>
+                            <ul>
+                                <li>SOLIDWORKS</li>
+                                <li>AutoCAD</li>
+                                <li>Autodesk Fusion 360</li>
+                                <li>Autodesk Inventor</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Finite Element Analysis (FEA) & Simulation</h4>
+                            <ul>
+                                <li>ANSYS Mechanical</li>
+                                <li>OpenSim</li>
+                                <li>Simulink</li>
+                                <li>Wolfram Mathematica</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4> Programming & Scripting</h4>
+                            <ul>
+                                <li>MATLAB</li>
+                                <li>Python</li>
+                                <li>Excel Visual Basic</li>
+                                <li>LaTeX</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4> Planning,Automation & Manufacturing </h4>
+                            <ul>
+                                <li>SAP</li>
+                                <li>Power Apps</li>
+                                <li>PreForm</li>
+                                <li>Connected Components Workbench</li>
+                            </ul>
+                        </div>
                     </div>
                 </section>
 
@@ -518,7 +584,7 @@
                     <!-- Research Assistant -->
                     <div class="dropdown">
                         <button>Research Assistant</button>
-                        <p class="date-location">Jan 2025 - May 2025 | North Carolina State University, Raleigh, NC</p>
+                        <p class="date-location">Jan 2025 - May 2025</p><p> North Carolina State University, Raleigh, NC</p>
                         <div class="dropdown-content">
                             <ul>
                                 <li>Research Assistant at the Neuromuscular Control and Robotics Lab, working on enhancing exoskeleton mobility.</li>
@@ -530,7 +596,7 @@
                     <!-- Process Development Intern -->
                     <div class="dropdown">
                         <button>Process Development Intern</button>
-                        <p class="date-location">May 2024 - August 2024 | Tioga Cardiovascular, Los Gatos, California</p>
+                        <p class="date-location">May 2024 - August 2024 </p> <p>Tioga Cardiovascular, Los Gatos, California</p>
                         <div class="dropdown-content">
                             <ul>
                                 <li>Optimized the manufacturing process of the Transcatheter Mitral Valve replacement product.</li>
@@ -543,7 +609,7 @@
                     <!-- Associate Engineer -->
                     <div class="dropdown">
                         <button>Associate Engineer</button>
-                        <p class="date-location">August 2021 - June 2023 | Eaton, Pune, India</p>
+                        <p class="date-location">August 2021 - June 2023 </p> <p> Eaton, Pune, India</p>
                         <div class="dropdown-content">
                             <ul>
                                 <li>Worked in the Regulators Department, Medium Voltage Power Distribution.</li>
@@ -558,7 +624,7 @@
                     <!-- Research Co-Op -->
                     <div class="dropdown">
                         <button>Research Co-Op</button>
-                        <p class="date-location">January 2021 - May 2021 | Bamboochi Bicycles, Pune, India</p>
+                        <p class="date-location">January 2021 - May 2021</p> <p> Bamboochi Bicycles, Pune, India</p>
                         <div class="dropdown-content">
                             <ul>
                                 <li>Employed SOLIDWORKS for frame modeling; ANSYS Mechanical, and Fusion 360 for structural analysis of the bamboo frame.</li>
@@ -575,50 +641,57 @@
                 <div class="card">
                     <ul class="projects-list">
                         <li class="dropdown">
-                            <a href="VisualServoControl.html" class="project-link" target="_blank">Visual Servo Control of a 7-link Kinova Gen3 Robot Arm</a>
+                            <a href="VisualServoControl.html" class="project-link" target="_blank">Visual Servo Control</a>
                             <div class="dropdown-content">
+                                <p>Visual Servo Control of a 7-link Kinova Gen3 Robot Arm</p>
                                 <p>MATLAB, OpenCV, GStreamer, ROS, Kinova Gen3 Robot</p>
                                 <p>Joint space and Task space control, Trajectory Planning (PID,MPC), Numerical Optimization, Inverse Kinematics, Camera Caliberation, Image Processing</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="ControllerSimulation.html" class="project-link" target="_blank">Simulation and Design of Nonlinear Controllers for a Two-Link Robot Arm</a>
+                            <a href="ControllerSimulation.html" class="project-link" target="_blank">Simulation and Design of Nonlinear Controllers</a>
                             <div class="dropdown-content">
+                                <p>Simulation and Design of Nonlinear Controllers for a Two-Link Robot Arm</p>
                                 <p>Matlab, Simulink</p>
                                 <p>Non-Linear Controler Design, Stability Analysis</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="SmartSortingLine.html" class="project-link" target="_blank">Remote Control and Monitoring of Conveyor System for Package Delivery</a>
+                            <a href="SmartSortingLine.html" class="project-link" target="_blank">Remote Control and Monitoring </a>
                             <div class="dropdown-content">
+                                <p>Remote Control and Monitoring of Conveyor System for Package Delivery</p>
                                 <p>Python, HTML, GitHub Render, PostGreSQL, Connected Components Workbench, Factory I/O, VS Code, Datagrip, Allen-Bradley Micro 800.</p>
                                 <p>Communication Protocols, PLC Programming, Sensor and Actuator Integration, Digital Twin, Machine Learning, based data management, IOT, AI/ML in predictive maintainance, Cyber Physical Syatems</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="ElectroPermanentMagneticClamp.html" class="project-link" target="_blank">Two-Pole Electro-Permanent Magnet Clamp for Workpiece Holding During Machining</a>
+                            <a href="ElectroPermanentMagneticClamp.html" class="project-link" target="_blank">Two-Pole Electro-Permanent Magnet Clamp </a>
                             <div class="dropdown-content">
+                                <p>Two-Pole Electro-Permanent Magnet Clamp for Workpiece Holding During Machining</p>
                                 <p>MATLAB, OctaveFEMM, ANSYS EDT</p>
                                 <p>Magnetic Circuit Analysis, Eddy Current Breaking, Magnetostatics</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="CarCruize.html" class="project-link" target="_blank">Design of State Feedback Controller for Car Cruise Control</a>
+                            <a href="CarCruize.html" class="project-link" target="_blank">Design of State Feedback Controller</a>
                             <div class="dropdown-content">
+                                <p>Design of State Feedback Controller for Car Cruise Control</p>
                                 <p>MATLAB, Simulink</p>
                                 <p>PID Controller Design, State Space Representation, Open and Closed Loop Transfer Function, Nyquist Diagram, Root Locus Staility Analysis, Controllability and Observability</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="SpaceCraft_Dyn.html" class="project-link" target="_blank">Modeling and Simulation of Spacecraft Attitude Dynamics</a>
+                            <a href="SpaceCraft_Dyn.html" class="project-link" target="_blank">Spacecraft Attitude Dynamics</a>
                             <div class="dropdown-content">
+                                <p>Modeling and Simulation of Spacecraft Attitude Dynamics</p>
                                 <p>MATLAB</p>
                                 <p>Euler Equations, Frame Transformations, ODE45</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="EDO.html" class="project-link" target="_blank">Optimization of Discrete Choice Models and Multi-Spring Systems</a>
+                            <a href="EDO.html" class="project-link" target="_blank">Neumerical Optimization</a>
                             <div class="dropdown-content">
+                                <p>Optimization of Discrete Choice Models and Multi-Spring Systems</p>
                                 <p>MATLAB</p>
                                 <p>Latin Hypercube Sampling, Polynomial Metamodeling, Radial Basis Function (RBF), Cross-validation, Optimization</p>
                             </div>
