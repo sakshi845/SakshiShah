@@ -145,9 +145,10 @@
             position: relative;
         }
 
+        
         .dropdown button {
             background-color: transparent;
-            color: #e4eff6;
+            color: #ffffff;
             font-size: 1.15em;
             font-weight: bold;
             text-decoration: none;
@@ -155,14 +156,15 @@
             cursor: pointer;
             display: inline-block;
             border: none;
-            border-bottom: 2px solid #3498db;
+            /* Remove this line: border-bottom: 2px solid #3498db; */
             width: auto;
-            transition: color 0.3s ease, border-bottom-color 0.3s ease;
+            transition: color 0.3s ease;
+            text-shadow:#bdc3c7
         }
 
         .dropdown button:hover, .dropdown button:active, .dropdown button:focus {
             color: #2980b9;
-            border-bottom-color: #2980b9;
+            /* Also remove this line: border-bottom-color: #2980b9; */
         }
 
         /* Change to tap/click for mobile */
@@ -217,7 +219,27 @@
             list-style: none;
             padding-left: 0;
             margin: 5px 0;
-            font-size: 1.1em;
+        }
+        .projects-list .dropdown {
+            margin-bottom: 12px;
+            position: relative;
+        }
+        .projects-list button {
+            background-color: transparent;
+            color: #e4eff6;
+            font-size: 1.15em;
+            font-weight: bold;
+            text-decoration: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            display: inline-block;
+            border: none;
+            width: auto;
+            transition: color 0.3s ease;
+            text-align: left;
+        }
+        .projects-list button:hover {
+            color: #2980b9;
         }
 
         .projects-list li {
@@ -228,7 +250,7 @@
         }
 
         .projects-list li a {
-            color: #f2f3f5;
+            color: #ffffff;
             text-decoration: none;
             text-underline-offset: 6px;
             text-decoration-color: #2980b9;
@@ -236,6 +258,7 @@
             transition: color 0.3s ease;
             display: inline-block;
             padding-bottom: 5px;
+            text-shadow: #bdc3c7;
         }
 
         .projects-list li a:hover {
@@ -244,36 +267,54 @@
         }
 
         .project-link {
+            display: block;
+            color: #3498db !important;
+            font-weight: bold;
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 1em;
             position: relative;
-            padding-left: 25px; /* Change from padding-right to padding-left */
-            word-break: break-word;
-            hyphens: auto;
+            padding-left: 25px;
         }
 
         /* Replace the after pseudo-element with before */
         .project-link::before {
-            content: '\2197  '; /* The arrow with some space after */
+            content: '\2192  '; /* Right arrow with space */
             position: absolute;
-            left: 0; /* Position at the left instead of right */
+            left: 0;
             top: 0;
             font-size: 1em;
-            opacity: 1;
-            color: #3b88bc;
+            color: #3498db;
+        }
+        .project-link:hover {
+            color: #2980b9 !important;
         }
 
         .project-link:hover::before {
             color: #2980b9;
-            text-decoration: none;
-            opacity: 1;
         }
 
         .projects-list .dropdown-content {
-            width: 90%;
-            left: 50%;
-            transform: translateX(-0%);
-            text-align: center;
+            display: none;
+            background-color: rgba(44, 62, 80, 0.95);
+            padding: 12px 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            max-width: 95%;
+            margin: 0 auto;
         }
 
+        .projects-list .dropdown:active .dropdown-content,
+        .projects-list .dropdown:focus-within .dropdown-content {
+            display: block;
+        }
+
+        /* Show on hover for desktop */
+        @media (hover: hover) {
+            .projects-list .dropdown:hover .dropdown-content {
+                display: block;
+            }
+        }
         .projects-list .dropdown-content p {
             margin: 5px 0;
             font-size: 0.7em;
@@ -440,10 +481,21 @@
 }
 
         /* Software Skills Section */
-        .skills-title {
-    color: #0e253c;
-    margin: 10px 0;
+        .skills-section {
+    padding: 20px;
+    background-color: #5d6d7e;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.skills-title {
+    color: #f0f4f8;
+    margin: 15px 0;
     text-align: center;
+    font-size: 1.3em;
 }
 
 .skills-grid {
@@ -459,19 +511,26 @@
 }
 
 .skill-category {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.skill-category:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .skill-category h4 {
-    color: #0e253c;
+    color: #f0f4f8;
     margin-top: 0;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     text-align: center;
-    border-bottom: 1px solid #d1d1d1;
-    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 8px;
+    font-size: 1.1em;
 }
 
 .skill-category ul {
@@ -481,10 +540,24 @@
 }
 
 .skill-category li {
-    color: #0e253c;
-    padding: 4px 0;
+    color: #bdc3c7;
+    padding: 5px 0;
     text-align: center;
-    font-size: 0.9em;
+    font-size: 0.95em;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.skill-category li:hover {
+    color: #ffffff;
+}
+
+.skill-category li::before {
+    content: "•";
+    color: #3498db;
+    display: inline-block;
+    width: 1em;
+    margin-right: 5px;
 }
 
         
@@ -533,7 +606,7 @@
         </div>
 
                  <!-- Minimal Software Skills Section -->
-                 <section id="skills" class="section">
+                 <section id="skills" class="skills-section">
                     <h3 class="skills-title">Software Skills</h3>
                     <div class="skills-grid">
                         <div class="skill-category">
@@ -546,7 +619,7 @@
                             </ul>
                         </div>
                         <div class="skill-category">
-                            <h4>Finite Element Analysis (FEA) & Simulation</h4>
+                            <h4>FEA & Simulation</h4>
                             <ul>
                                 <li>ANSYS Mechanical</li>
                                 <li>OpenSim</li>
@@ -555,21 +628,26 @@
                             </ul>
                         </div>
                         <div class="skill-category">
-                            <h4> Programming & Scripting</h4>
+                            <h4>Programming & Scripting</h4>
                             <ul>
                                 <li>MATLAB</li>
                                 <li>Python</li>
                                 <li>Excel Visual Basic</li>
                                 <li>LaTeX</li>
+                                <li>OpenCV</li>
+                                <li>HTML</li>
+                                <li>DataGrip</li>
                             </ul>
                         </div>
                         <div class="skill-category">
-                            <h4> Planning,Automation & Manufacturing </h4>
+                            <h4>Automation & Manufacturing</h4>
                             <ul>
                                 <li>SAP</li>
                                 <li>Power Apps</li>
                                 <li>PreForm</li>
                                 <li>Connected Components Workbench</li>
+                                <li>ROS</li>
+                                <li>PostgreSQL</li>
                             </ul>
                         </div>
                     </div>
@@ -641,57 +719,65 @@
                 <div class="card">
                     <ul class="projects-list">
                         <li class="dropdown">
-                            <a href="VisualServoControl.html" class="project-link" target="_blank">Visual Servo Control</a>
+                            <button>Visual Servo Control </button>
                             <div class="dropdown-content">
                                 <p>Visual Servo Control of a 7-link Kinova Gen3 Robot Arm</p>
+                                <a href="VisualServoControl.html" class="project-link" target="_blank">View Project</a>
                                 <p>MATLAB, OpenCV, GStreamer, ROS, Kinova Gen3 Robot</p>
                                 <p>Joint space and Task space control, Trajectory Planning (PID,MPC), Numerical Optimization, Inverse Kinematics, Camera Caliberation, Image Processing</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="ControllerSimulation.html" class="project-link" target="_blank">Simulation and Design of Nonlinear Controllers</a>
+                            <button>Controller Design</button>
                             <div class="dropdown-content">
                                 <p>Simulation and Design of Nonlinear Controllers for a Two-Link Robot Arm</p>
+                                <a href="ControllerSimulation.html" class="project-link" target="_blank">View Project</a>
                                 <p>Matlab, Simulink</p>
                                 <p>Non-Linear Controler Design, Stability Analysis</p>
                             </div>
                         </li>
+                        <!-- Repeat for other projects -->
                         <li class="dropdown">
-                            <a href="SmartSortingLine.html" class="project-link" target="_blank">Remote Control and Monitoring </a>
+                            <button>Remote Control and Monitoring </button>
                             <div class="dropdown-content">
                                 <p>Remote Control and Monitoring of Conveyor System for Package Delivery</p>
+                                <a href="SmartSortingLine.html" class="project-link" target="_blank">View Project</a>
                                 <p>Python, HTML, GitHub Render, PostGreSQL, Connected Components Workbench, Factory I/O, VS Code, Datagrip, Allen-Bradley Micro 800.</p>
                                 <p>Communication Protocols, PLC Programming, Sensor and Actuator Integration, Digital Twin, Machine Learning, based data management, IOT, AI/ML in predictive maintainance, Cyber Physical Syatems</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="ElectroPermanentMagneticClamp.html" class="project-link" target="_blank">Two-Pole Electro-Permanent Magnet Clamp </a>
+                            <button>Two-Pole Electro-Permanent Magnet Clamp </button>
                             <div class="dropdown-content">
                                 <p>Two-Pole Electro-Permanent Magnet Clamp for Workpiece Holding During Machining</p>
+                                <a href="ElectroPermanentMagneticClamp.html" class="project-link" target="_blank">View Project</a>
                                 <p>MATLAB, OctaveFEMM, ANSYS EDT</p>
                                 <p>Magnetic Circuit Analysis, Eddy Current Breaking, Magnetostatics</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="CarCruize.html" class="project-link" target="_blank">Design of State Feedback Controller</a>
+                            <button>Design of State Feedback Controller </button>
                             <div class="dropdown-content">
                                 <p>Design of State Feedback Controller for Car Cruise Control</p>
+                                <a href="CarCruize.html" class="project-link" target="_blank">View Project</a>
                                 <p>MATLAB, Simulink</p>
                                 <p>PID Controller Design, State Space Representation, Open and Closed Loop Transfer Function, Nyquist Diagram, Root Locus Staility Analysis, Controllability and Observability</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="SpaceCraft_Dyn.html" class="project-link" target="_blank">Spacecraft Attitude Dynamics</a>
+                            <button>Spacecraft Attitude Dynamics</button>
                             <div class="dropdown-content">
                                 <p>Modeling and Simulation of Spacecraft Attitude Dynamics</p>
+                                <a href="SpaceCraft_Dyn.html"class="project-link" target="_blank">View Project</a>
                                 <p>MATLAB</p>
                                 <p>Euler Equations, Frame Transformations, ODE45</p>
                             </div>
                         </li>
                         <li class="dropdown">
-                            <a href="EDO.html" class="project-link" target="_blank">Neumerical Optimization</a>
+                            <button>Numerical Optimization</button>
                             <div class="dropdown-content">
                                 <p>Optimization of Discrete Choice Models and Multi-Spring Systems</p>
+                                <a href="EDO.html"class="project-link" target="_blank">View Project</a>
                                 <p>MATLAB</p>
                                 <p>Latin Hypercube Sampling, Polynomial Metamodeling, Radial Basis Function (RBF), Cross-validation, Optimization</p>
                             </div>
@@ -699,6 +785,7 @@
                     </ul>
                 </div>
             </section>
+
         </div>
 
         <footer class="footer">
