@@ -5,8 +5,10 @@ Simulink.importExternalCTypes('C:\Users\admin\OneDrive - North Carolina State Un
 gen3 = loadrobot("kinovaGen3");
 gen3.DataFormat = 'column';
 
-%% parameters
+%% parameters  - use camera_me function or explicitParamerts
 %[O,C,C_rotationMatrix,f,d,ang,Config,EEPose_Test_1]=camera_me(gen3);
+
+%explicitParamerts
 0=[0 0 0];
 C=[-.3591; -.2983; .03403];
 f=200;
@@ -16,6 +18,8 @@ jointConfig=load('kinova_pose.mat');
 jointConfig_ang=cell2mat(jointConfig.jointAngles);
 Config=jointConfig_ang(end):
 d= C-O; 
+%end of explicitParamerts
+
 initial_Config=Config*pi/180;
 init_pose = [C ; ang']
 % Config=Config*(180/pi)
