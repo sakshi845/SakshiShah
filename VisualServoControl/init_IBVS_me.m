@@ -6,11 +6,19 @@ gen3 = loadrobot("kinovaGen3");
 gen3.DataFormat = 'column';
 
 %% parameters
-[O,C,C_rotationMatrix,f,d,ang,Config,EEPose_Test_1]=camera_me(gen3);
+%[O,C,C_rotationMatrix,f,d,ang,Config,EEPose_Test_1]=camera_me(gen3);
+0=[0 0 0];
+C=[-.3591; -.2983; .03403];
+f=200;
+ang=[-1.794, .1573, 1.248];
+C_rotationMatrix=[.2191, -.9629, -.1575;.2763,-.216, .9265;-.9358,.617,.3134];
+jointConfig=load('kinova_pose.mat');
+jointConfig_ang=cell2mat(jointConfig.jointAngles);
+Config=jointConfig_ang(end):
+d= C-O; 
 initial_Config=Config*pi/180;
 init_pose = [C ; ang']
 % Config=Config*(180/pi)
-EEPose_Test_1
 Config_show=Config*pi/180
 show(gen3,Config_show)
 % pose=init_pose
