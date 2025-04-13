@@ -15,7 +15,7 @@ C_rotationMatrix=[.2191, -.9629, -.1575;.2763,-.216, .9265;-.9358,.617,.3134];
 jointConfig=load('kinova_pose.mat');
 jointConfig_ang=cell2mat(jointConfig.jointAngles);
 Config=jointConfig_ang(end):
-
+d= C-O; 
 initial_Config=Config*pi/180;
 init_pose = [C ; ang']
 % Config=Config*(180/pi)
