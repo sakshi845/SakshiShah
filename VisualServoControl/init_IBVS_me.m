@@ -14,9 +14,12 @@ C=[-.3591; -.2983; .03403];
 f=200;
 ang=[-1.794, .1573, 1.248];
 C_rotationMatrix=[.2191, -.9629, -.1575;.2763,-.216, .9265;-.9358,.617,.3134];
-jointConfig=load('kinova_pose.mat');
-jointConfig_ang=cell2mat(jointConfig.jointAngles);
-Config=jointConfig_ang(end):
+
+jointPositionsDeg_row = {jointConfiguration.data.jointAngles};
+testPose_Deg= jointPositionsDeg_row(1,end)';
+testPose_Deg=cell2mat(testPose_Deg);
+Config=testPose_Deg
+
 d= C-O; 
 %end of explicitParamerts
 
