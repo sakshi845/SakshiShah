@@ -3,7 +3,7 @@ function [O,C,C_rotationMatrix,f_meters,d,ang,Config,EEPose_Test_1]=camera_me(ge
 % world origin frame
 O = [0; 0; 0];        
 
-jointConfiguration = load("C:\Users\admin\OneDrive - North Carolina State University\Dr. Nitin Sharma\visual servo control\Caliberation_Data\kinova_pose.mat");
+jointConfiguration = load("kinova_pose.mat");
 jointPositionsDeg_row = {jointConfiguration.data.jointAngles};
 testPose_Deg= jointPositionsDeg_row(1,31)';
 testPose_Deg=cell2mat(testPose_Deg);

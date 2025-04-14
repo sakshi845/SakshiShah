@@ -5,17 +5,26 @@ Simulink.importExternalCTypes('C:\Users\admin\OneDrive - North Carolina State Un
 gen3 = loadrobot("kinovaGen3");
 gen3.DataFormat = 'column';
 
-%% parameters
+%% parameters  - use camera_me function or explicitParamerts
 %[O,C,C_rotationMatrix,f,d,ang,Config,EEPose_Test_1]=camera_me(gen3);
-0=[0 0 0];
+
+%explicitParamerts
+0=[0;0; 0];
 C=[-.3591; -.2983; .03403];
-f=200;
+f=[276.2;5394.6];
 ang=[-1.794, .1573, 1.248];
-C_rotationMatrix=[.2191, -.9629, -.1575;.2763,-.216, .9265;-.9358,.617,.3134];
-jointConfig=load('kinova_pose.mat');
-jointConfig_ang=cell2mat(jointConfig.jointAngles);
-Config=jointConfig_ang(end):
+C_rotationMatrix=[-0.218267071046040,	0.276284485760264,	-0.935962803013650;
+-0.963219880412344,	-0.215031407991119,	0.161148861478406;
+-0.156738469034926,	0.936711469186506,	0.313056984938915]
+
+jointPositionsDeg_row = {jointConfiguration.data.jointAngles};
+testPose_Deg= jointPositionsDeg_row(1,end)';
+testPose_Deg=cell2mat(testPose_Deg);
+Config=testPose_Deg
+
 d= C-O; 
+%end of explicitParamerts
+
 initial_Config=Config*pi/180;
 init_pose = [C ; ang']
 % Config=Config*(180/pi)
