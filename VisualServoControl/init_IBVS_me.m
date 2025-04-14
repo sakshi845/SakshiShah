@@ -9,7 +9,7 @@ gen3.DataFormat = 'column';
 %[O,C,C_rotationMatrix,f,d,ang,Config,EEPose_Test_1]=camera_me(gen3);
 
 %explicitParamerts
-0=[0 0 0];
+0=[0;0; 0];
 C=[-.3591; -.2983; .03403];
 f=[276.2;5394.6];
 ang=[-1.794, .1573, 1.248];
