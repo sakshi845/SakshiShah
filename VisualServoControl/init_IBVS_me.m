@@ -52,5 +52,5 @@ Kd = 5*eye(4); %differential gain
 
 
 %connect to robot
-j=load("jntconfig.mat")
+%j=load("jntconfig.mat")
 
