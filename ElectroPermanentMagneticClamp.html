@@ -76,6 +76,23 @@
             text-align: left;
         }
 
+        .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
         /* Responsive Design for Smaller Screens */
         @media (max-width: 768px) {
             .container {
@@ -113,6 +130,23 @@
             a {
                 font-size: 0.9em;
             }
+            .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
         }
     </style>
 </head>
@@ -121,7 +155,9 @@
     <div class="container">
         <p><a href="portfolio.html">Back to Home</a></p>
         <h1>Two Pole Electro-Permanent Magnet Clamp for Workpiece Holding During Machining</h1>
+        <p><strong>Objective:</strong></p>
         <p>This project optimized a two-pole electro-permanent magnetic clamping system designed to replace traditional clamps in machining operations. Iterative design and analysis using Magnetic Circuit Analysis (MCA), Finite Element Method Magnetics (FEMM), and ANSYS software ensured the achievement of performance goals.</p>
+        <p><strong>Results:</strong></p>
         <li>Optimized the design of an Electro-Permanent Magnetic Clamp using Magnetic Circuit Analysis (MCA) and Finite Element 
             Method Magnetics (FEMM), achieving a vertical reluctance force of 1460.1 lbf.</li>
         <li>Validated FEMM data through 3D analysis in Ansys Electronics Desktop, ensuring accurate force calculations and 
@@ -132,6 +168,12 @@
             <div class="card-content">
                 MATLAB, OctaveFEMM, ANSYS EDT
             </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="image-container">
+            <div><img src="ElectroPermanentMagneticClamp/MagneticFluxDensity.png" alt="Magnetic Flux"></div>
+            <div><img src="ElectroPermanentMagneticClamp/Temperature_EPMC.png" alt="Temperature"></div>
         </div>
 
        
