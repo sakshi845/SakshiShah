@@ -614,6 +614,101 @@
             width: 1em;
             margin-right: 5px;
         }
+
+  /* Timeline Wrapper */
+.timeline-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Vertical Progress Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #a3c1d4;
+    transition: height 1s ease-out;
+}
+
+/* Timeline Entry Container */
+.timeline-entry {
+    position: relative;
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+/* Alternating Entries */
+.timeline-entry:nth-child(odd) {
+    right:10%;
+    text-align: left;
+}
+
+.timeline-entry:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+/* Content Box */
+.timeline-entry .box {
+    display: inline-block;
+    max-width: 420px;
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 12px;
+    color: white;
+    background-color: #6d87a3;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease;
+}
+
+/* Category Colors */
+.box.edu { background-color: #6ca7bf; }
+.box.work { background-color: #1b2d41; }
+.box.research { background-color: #d16d10; }
+
+/* Animation */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive (Mobile) */
+@media screen and (max-width: 767px) {
+    .timeline::before {
+        left: 20px;
+        transform: none;
+    }
+
+    .timeline-entry {
+        width: 100%;
+        left: 0 !important;
+        padding: 20px 30px;
+        text-align: left !important;
+    }
+
+    .timeline-entry .box {
+        max-width: 100%;
+    }
+}
+
+
+        
+
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
@@ -853,11 +948,110 @@
                 </div>
             </section>
 
+
+
+<div class="timeline-wrapper">
+    <div class="timeline-container">
+    <h2 class="timeline-heading">    Timeline</h2>
+  <section id="timeline" class="timeline">
+
+    <div class="timeline-entry">
+      <div class="box research">
+        <h4>Jan 2025 – May 2025</h4>
+        <p><b>Graduate Research Assistant</b> – NCSU</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="box work">
+        <h4>May 2024 – Aug 2024</h4>
+        <p><b>Process Development Engineer</b> – Tioga Cardiovascular</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="box edu">
+        <h4>Aug 2023 – May 2025</h4>
+        <p><b>M.S. Mechanical Engineering</b> – NCSU</p>
+        <p>GPA: 4.0 </p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="box work">
+        <h4>Aug 2021 – Jun 2023</h4>
+        <p><b>Associate Engineer</b> – Eaton</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="box work">
+        <h4>Sep 2020 – Apr 2021</h4>
+        <p><b>Research Co-op</b> – Bamboochi Bicycles</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="box edu">
+        <h4>Aug 2017 – Jun 2021</h4>
+        <p><b>B.Tech Mechanical Engineering</b> – Pune University</p>
+        <p>GPA: 8.45 </p>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+
+
+
+
+
+
+
         </div>
 
         <footer class="footer">
             
         </footer>
     </div>
+
+    <script>
+  window.addEventListener('scroll', function () {
+    const timeline = document.querySelector('.timeline');
+    const line = timeline.querySelector('::before');
+
+    // Create a dynamic style tag for pseudo-element
+    let styleTag = document.getElementById('timeline-line-style');
+    if (!styleTag) {
+      styleTag = document.createElement('style');
+      styleTag.id = 'timeline-line-style';
+      document.head.appendChild(styleTag);
+    }
+
+    const rect = timeline.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const totalTimelineHeight = timeline.scrollHeight;
+
+    if (rect.top < viewportHeight && rect.bottom > 0) {
+      const visiblePortion = Math.min(viewportHeight - rect.top, totalTimelineHeight);
+      const percent = Math.min(visiblePortion / totalTimelineHeight, 1);
+      const lineHeight = percent * totalTimelineHeight;
+
+      styleTag.textContent = `
+        .timeline::before {
+          height: ${lineHeight}px !important;
+        }
+      `;
+    } else {
+      styleTag.textContent = `
+        .timeline::before {
+          height: 0 !important;
+        }
+      `;
+    }
+  });
+</script>
+
 </body>
 </html>
