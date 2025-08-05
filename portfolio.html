@@ -614,96 +614,62 @@
             width: 1em;
             margin-right: 5px;
         }
+        .timeline-portfolio-layout {
+                display: flex;
+                flex-direction: column;         /* Stack children vertically */
+                align-items: center;            /* Center children horizontally */
+                max-width: 600px;               /* limit overall width (adjust as needed) */
+                margin: 40px auto 0 auto;       /* center the container with margin on top */
+                width: 100%;
+                /* Add these lines for better visibility */
+                background-color: #1a1a1a; /* or #1a1a1a for dark background */
+                color: #ffffff;            /* or #ffffff for dark text on dark bg */
+                padding: 40px 20px;        /* adds space inside the section */
+                border-radius: 8px;        /* optional: rounded corners */
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* optional: subtle shadow */
+                }
 
-  /* Timeline Wrapper */
-.timeline-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    box-sizing: border-box;
-}
+                .timeline-container, .portfolio-aside {
+                width: 100%;                    /* Full width within max-width */
+                max-width: 600px;               /* Keep maximum size equal to parent */
+                margin-bottom: 40px;            /* Space between timeline and portfolio */
+                }
 
-/* Timeline Container */
-.timeline {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-}
+                .timeline-entry .box {
+                    background-color: #f0f4f8; /* Darker blue/navy for good background */
+                    color: #1b2d41;           /* Light text for readability */
+                    padding: 20px 25px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                    animation: fadeInUp 0.15s ease;
+                }
 
-/* Vertical Progress Line */
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 100%;
-    background-color: #a3c1d4;
-    transition: height 1s ease-out;
-}
+                .timeline::before {
+                background-color: #2980b9; /* brighter contrasting color */
+            }
 
-/* Timeline Entry Container */
-.timeline-entry {
-    position: relative;
-    width: 50%;
-    padding: 20px 40px;
-    box-sizing: border-box;
-}
+                .portfolio-aside {
+                box-shadow: 0 2px 10px rgba(100,100,140,0.1);
+                border-radius: 14px;
+                padding: 18px 12px;
+                background: #f8f9fa;
+                }
 
-/* Alternating Entries */
-.timeline-entry:nth-child(odd) {
-    right:10%;
-    text-align: left;
-}
+                .portfolio-images {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                }
 
-.timeline-entry:nth-child(even) {
-    left: 50%;
-    text-align: left;
-}
+                .portfolio-images img {
+                width: 100%;
+                max-width: 300px;
+                border-radius: 10px;
+                object-fit: cover;
+                background: #fff;
+                }
 
-/* Content Box */
-.timeline-entry .box {
-    display: inline-block;
-    max-width: 420px;
-    width: 100%;
-    padding: 20px 25px;
-    border-radius: 12px;
-    color: white;
-    background-color: #6d87a3;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    animation: fadeInUp 0.8s ease;
-}
-
-/* Category Colors */
-.box.edu { background-color: #6ca7bf; }
-.box.work { background-color: #1b2d41; }
-.box.research { background-color: #d16d10; }
-
-/* Animation */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive (Mobile) */
-@media screen and (max-width: 767px) {
-    .timeline::before {
-        left: 20px;
-        transform: none;
-    }
-
-    .timeline-entry {
-        width: 100%;
-        left: 0 !important;
-        padding: 20px 30px;
-        text-align: left !important;
-    }
-
-    .timeline-entry .box {
-        max-width: 100%;
-    }
-}
 
 
         
@@ -950,59 +916,68 @@
                 </div>
             </section>
 
+            <section id="timeline" class="timeline">
+
+            <div class="timeline-entry">
+                <div class="box research">
+                <h4>Jan 2025 – May 2025</h4>
+                <p><b>Graduate Research Assistant</b> – Neuromuscular Controls and Rehabilitation Lab, NCSU</p>
+                <p>Raleigh, NC</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box work">
+                <h4>May 2024 – Aug 2024</h4>
+                <p><b>Process Development Engineer</b> – Tioga Cardiovascular</p>
+                <p>Los Gatos, CA</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box edu">
+                <h4>Aug 2023 – May 2025</h4>
+                <p><b>Master of Science in Mechanical Engineering</b> – North Carolina State University</p>
+                <p>GPA: 4.0</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box work">
+                <h4>Aug 2021 – Jun 2023</h4>
+                <p><b>Associate Engineer</b> – Eaton</p>
+                <p>Pune, Maharashtra, India</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box work">
+                <h4>Sep 2020 – Apr 2021</h4>
+                <p><b>Research Co-op</b> – Bamboochi Bicycles</p>
+                <p>Mumbai, Maharashtra, India</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box edu">
+                <h4>Aug 2017 – Jun 2021</h4>
+                <p><b>Bachelor of Technology in Mechanical Engineering</b> – MKSSS's Cummins College of Engineering for Women</p>
+                <p>GPA: 8.45</p>
+                </div>
+            </div>
 
 
-<div class="timeline-wrapper">
-    <div class="timeline-container">
-    <h2 class="timeline-heading">    Timeline</h2>
-  <section id="timeline" class="timeline">
+            </section>
+            <aside id="portfolio" class="portfolio-aside">
+            <h2>Design Portfolio</h2>
+               <div class="portfolio-images">
+                    <img src="Design_Portfolio_Images/CatheterBraidingFixture.png" alt="Design Project 2"style="cursor: pointer;"
+     onclick="window.open('Design_Portfolio_PDFs/bamboo_cycle.pdf', '_blank')">
+                   <img src="Design_Portfolio_Images/bamboo cycle.png" alt="Design Project 1">
+                   <img src="Design_Portfolio_Images/Exo.png" alt="Design Project 3">
+               </div>
+            </aside>
 
-    <div class="timeline-entry">
-      <div class="box research">
-        <h4>Jan 2025 – May 2025</h4>
-        <p><b>Graduate Research Assistant</b> – NCSU</p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="box work">
-        <h4>May 2024 – Aug 2024</h4>
-        <p><b>Process Development Engineer</b> – Tioga Cardiovascular</p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="box edu">
-        <h4>Aug 2023 – May 2025</h4>
-        <p><b>M.S. Mechanical Engineering</b> – NCSU</p>
-        <p>GPA: 4.0 </p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="box work">
-        <h4>Aug 2021 – Jun 2023</h4>
-        <p><b>Associate Engineer</b> – Eaton</p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="box work">
-        <h4>Sep 2020 – Apr 2021</h4>
-        <p><b>Research Co-op</b> – Bamboochi Bicycles</p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="box edu">
-        <h4>Aug 2017 – Jun 2021</h4>
-        <p><b>B.Tech Mechanical Engineering</b> – Pune University</p>
-        <p>GPA: 8.45 </p>
-      </div>
-    </div>
-
-  </section>
-</div>
 
 
 
