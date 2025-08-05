@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sakshi Shah - Website</title>
+    <title>Sakshi Shah - Portfolio</title>
     <style>
         /* General Styles */
         body {
@@ -125,7 +125,7 @@
             font-size: 1.3em;
             margin-bottom: 8px;
             color: #f0f4f8;
-            text-align: justify;
+            text-align: center;
         }
 
         .card p {
@@ -200,7 +200,7 @@
         }
 
         .dropdown-content ul {
-            list-style-type: square;
+            list-style-type:none;
             padding-left: 0;
             margin: 5px 0;
         }
@@ -376,7 +376,7 @@
             padding: 20px; /* Adds spacing inside the section */
             border-radius: 10px; /* Rounded corners */
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
-            text-align: justify;
+            text-align: center;
         }    
 
         .typing-container {
@@ -384,6 +384,7 @@
             height: auto;
             display: block;
             margin-top: 10px;
+            text-align:center;
         }
 
         .typing-line {
@@ -391,10 +392,10 @@
             white-space: nowrap;
             overflow: hidden;
             width: 0;
-            animation: typing 4s steps(60) forwards, blink 0.75s step-end infinite;
+            animation: typing 2s steps(60) forwards, blink 0.25s step-end infinite;
             display: block;
             margin-bottom: 0.1em;
-            text-align:start;
+            text-align:center;
         }
 
         /* Delay each line by its index - increased for better readability */
@@ -403,19 +404,19 @@
         }
 
         .typing-line:nth-child(2) {
-            animation-delay: 4s;
+            animation-delay: 2s;
         }
 
         .typing-line:nth-child(3) {
-            animation-delay: 8s;
+            animation-delay: 4s;
         }
         
         .typing-line:nth-child(4) {
-            animation-delay: 12s;
+            animation-delay: 6s;
         }
         
         .typing-line:nth-child(5) {
-            animation-delay: 16s;
+            animation-delay: 8s;
         }
 
         /* Animation for typing */
@@ -613,6 +614,67 @@
             width: 1em;
             margin-right: 5px;
         }
+        .timeline-portfolio-layout {
+                display: flex;
+                flex-direction: column;         /* Stack children vertically */
+                align-items: center;            /* Center children horizontally */
+                max-width: 600px;               /* limit overall width (adjust as needed) */
+                margin: 40px auto 0 auto;       /* center the container with margin on top */
+                width: 100%;
+                /* Add these lines for better visibility */
+                background-color: #1a1a1a; /* or #1a1a1a for dark background */
+                color: #ffffff;            /* or #ffffff for dark text on dark bg */
+                padding: 40px 20px;        /* adds space inside the section */
+                border-radius: 8px;        /* optional: rounded corners */
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* optional: subtle shadow */
+                }
+
+                .timeline-container, .portfolio-aside {
+                width: 100%;                    /* Full width within max-width */
+                max-width: 600px;               /* Keep maximum size equal to parent */
+                margin-bottom: 40px;            /* Space between timeline and portfolio */
+                }
+
+                .timeline-entry .box {
+                    background-color: #f0f4f8; /* Darker blue/navy for good background */
+                    color: #1b2d41;           /* Light text for readability */
+                    padding: 20px 25px;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                    animation: fadeInUp 0.15s ease;
+                }
+
+                .timeline::before {
+                background-color: #2980b9; /* brighter contrasting color */
+            }
+
+                .portfolio-aside {
+                box-shadow: 0 2px 10px rgba(100,100,140,0.1);
+                border-radius: 14px;
+                padding: 18px 12px;
+                background: #f8f9fa;
+                }
+
+                .portfolio-images {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                }
+
+                .portfolio-images img {
+                width: 100%;
+                max-width: 300px;
+                border-radius: 10px;
+                object-fit: cover;
+                background: #fff;
+                }
+
+
+
+        
+
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Courier+New&display=swap" rel="stylesheet">
@@ -627,6 +689,7 @@
                 <a href="#skills" class="index-nav-link">Skills</a>
                 <a href="#professional-experience" class="index-nav-link">Experience</a>
                 <a href="#projects" class="index-nav-link">Projects</a>
+                <a href="#timeline" class="index-nav-link">Timeline</a>
             </div>
         </nav>
 
@@ -637,7 +700,8 @@
                 <div class="btn-container">
                     <a href="mailto:sshah37@ncsu.edu" class="btn">Email</a>
                     <a href="https://www.linkedin.com/in/sakshi-5hah/" target="_blank" class="btn">LinkedIn</a>
-                    <a href="SakshiShah_Resume.pdf" target="_blank" class="resume-card">Resume</a>
+                    <a href="SakshiShah_Resume.pdf" target="_blank" class="resume-card" type="application/pdf">Resume</a>
+                    <a href="Design_Portfolio.pdf" target="_blank" class="resume-card" type="application/pdf">Design Portfolio</a>
                 </div>
             </div>
         </header>
@@ -646,11 +710,10 @@
         <section id="about-me" class="section" style="margin-top: 0;">
             <h3 class="about-me-text">About Me</h3>
             <div class="typing-container">
-                <p class="typing-line">Master's student in Mechanical Engineering, focusing on dynamics and control systems.</p>
-                <p class="typing-line">I am proficient in hardware integration, PLC programming, robot path planning, stability analysis,
-                    and dynamic system modeling.</p>
-                <p class="typing-line">My experience at Tioga Cardiovascular and Eaton has honed my skills in automation, design,
-                    and process engineering.</p>
+                <p class="typing-line">Master’s student in Mechanical Engineering with a focus on dynamics and control systems. </p>
+                <p class="typing-line"> I have hands-on experience in 3D modeling, robot path planning, and PLC programming.  </p>
+                <p class="typing-line">My work at Eaton and Tioga Cardiovascular helped build my skills in automation, prototyping, and process improvement.  </p>
+                <p class="typing-line">I am currently learning and applying control theory and system modeling to real-world engineering problems.</p>                
             </div>
         </section>
 
@@ -715,10 +778,10 @@
                         <p>North Carolina State University, Raleigh, NC</p>
                         <div class="dropdown-content">
                             <ul>
-                                <li>Research Assistant at the Neuromuscular Control and Robotics Lab, working on enhancing exoskeleton mobility.</li>
-                                <li>Designing linkages in SOLIDWORKS for incorporating lateral movement ability in a wearable exoskeleton.</li>
-                                <li>Prototyping and 3D printing parts using an Ultimaker</li>
-                                <li>Selected and integrated motors for smooth and precise actuation.</li>
+                                <li>Research Assistant at the <b>Neuromuscular Control and Robotics Lab</b>, working on enhancing exoskeleton mobility.</li>
+                                <li><b>Designing linkages</b> in SOLIDWORKS for incorporating lateral movement ability in a wearable exoskeleton.</li>
+                                <li><b>Prototyping and 3D printing</b> parts using an Ultimaker</li>
+                                <li><b>Selected and integrated motors</b> for smooth and precise actuation.</li>
                             </ul>
                         </div>
                     </div>
@@ -728,10 +791,13 @@
                         <p class="date-location">May 2024 - August 2024</p>
                         <p>Tioga Cardiovascular, Los Gatos, California</p>
                         <div class="dropdown-content">
+                            <a href="Tioga/InternshipTioga.pdf" class="project-link" target="_blank" type="application/pdf" style="font-size: 18px;">
+                                View Projects
+                              </a>
                             <ul>
-                                <li>Supported process development and R&D in optimizing the Luna TMVR product's manufacturing process.</li>
-                                <li>Designed SLA-printed fixtures using SolidWorks and Preform for vibration damping and testing the delivery system.</li>
-                                <li>Refined engineering drawings for GD&T, managed approval requests for controlled documents, and ensured quality 
+                                <li>Supported process development and R&D in optimizing the <b>Luna TMVR</b> product's manufacturing process.</li>
+                                <li>Designed <b>SLA-printed fixtures</b> using SolidWorks and Preform for vibration damping and testing the delivery system.</li>
+                                <li>Refined engineering drawings for <b>GD&T</b>, managed <b>approval requests for controlled documents</b>, and ensured quality 
                                     checks for injection-molded components, improving precision and reducing defects.</li>
                             </ul>
                         </div>
@@ -744,16 +810,16 @@
                         <div class="dropdown-content">
                             <ul>
                                 <li>Worked in the Regulators Department, Medium Voltage Power Distribution.</li>
-                                <li>Managed 250 customer orders from initial inquiry to final delivery and optimized the Engineering-to-Order (ETO)
-                                    process through Python and Excel-VBA-based automation, increasing efficiency by 34%.</li>
-                                <li>Supported the plant by executing 48 Engineering Change Requests (ECRs) and 5 Sustaining Engineering projects for 
+                                <li>Managed <b>250 customer orders</b> from initial inquiry to final delivery and optimized the Engineering-to-Order (<b>ETO</b>)
+                                    process through Python and <b>Excel-VBA-based automation</b>, increasing efficiency by <b>34%</b>.</li>
+                                <li>Supported the plant by executing <b>48</b> Engineering Change Requests (<b>ECRs</b>) and <b>5 Sustaining Engineering</b> projects for 
                                    the Medium Voltage regulators team, standardizing processes and reducing labor hours through part drawing revisions, 
-                                   bill of materials (BOM) standardization in SAP, and documentation.</li>
-                                <li> Executed resiliency, Continuous Improvement (CI), and Design for Assembly (DFA) projects. Certified in Six Sigma 
-                                   DMAIC.</li>
-                                <li>Reduced costs through Value Analysis/Value Engineering (VAVE) projects, saving $100K, reducing part variations by 
-                                   96%, minimizing material waste, improving inventory management, and mitigating part shortages.</li>
-                                <li>Collaborated with suppliers and stakeholders to develop ramp-up and ramp-down plans for project implementation.</li>   
+                                   bill of materials (<b>BOM</b>) standardization in SAP, and <b>documentation</b>.</li>
+                                <li> Executed <b>resiliency</b>, Continuous Improvement (<b>CI</b>), and Design for Assembly (<b>DFA</b>) projects. Certified in <b>Six Sigma 
+                                   DMAIC</b>.</li>
+                                <li>Reduced costs through Value Analysis/Value Engineering (<b>VAVE</b>) projects, saving <b>$100K</b>, reducing part variations by 
+                                   <b>96%</b>, minimizing material waste, improving inventory management, and mitigating part shortages.</li>
+                                <li>Collaborated with <b>suppliers and stakeholders</b> to develop <b>ramp-up and ramp-down plans</b> for project implementation.</li>
                             </ul>
                         </div>
                     </div>
@@ -763,11 +829,14 @@
                         <p class="date-location">January 2021 - May 2021</p>
                         <p>Bamboochi Bicycles, Pune, India</p>
                         <div class="dropdown-content">
+                            <a href="Bamboochi/Bamboochi_Project.pdf" class="project-link" target="_blank" type="application/pdf" style="font-size: 18px;">
+                                View Project
+                              </a>
                             <ul>
                                 <li>Conceptualized and developed a sustainable intercity bicycle utilizing bamboo for frame.</li>
-                                <li>Leveraged  CAD and simulation tools (SOLIDWORKS, Fusion 360) to design a bicycle frame, integrating design 
-                                   simulation tools to support manufacturing feasibility and product development.</li>
-                                <li>Utilized MATLAB for parameter modeling, optimizing bicycle handling and performance characteristics, and performed 
+                                <li>Leveraged  <b>CAD and simulation</b> tools (SOLIDWORKS, Fusion 360) to design a <b>bicycle frame</b>, integrating design 
+                                   simulation tools to support <b>manufacturing feasibility</b> and product development.</li>
+                                <li>Utilized MATLAB for <b>parameter modeling</b>, optimizing bicycle handling and performance characteristics, and performed 
                                    detailed mechanical analysis using ANSYS Mechanical, achieving a Fork flop of 150.43 N/rad, Maximum control 
                                    sensitivity of 16.26 rad/ms, Operational speed range of 2-12 m/s at 50 RPM</li>
                             </ul>
@@ -785,7 +854,7 @@
                             <div class="dropdown-content">
                                 <p>Visual Servo Control of a 7-link Kinova Gen3 Robot Arm</p>
                                 <a href="VisualServoControl.html" class="project-link" target="_blank">View Project</a>
-                                <p>MATLAB, OpenCV, GStreamer, ROS, Kinova Gen3 Robot</p>
+                                <p style="text-align: center;">MATLAB, Simulink, OpenCV, GStreamer, ROS, Kinova Gen3 Robot</p>
                                 <p>Joint space and Task space control, Trajectory Planning (PID,MPC), Numerical Optimization, Inverse Kinematics, Camera Caliberation, Image Processing</p>
                             </div>
                         </li>
@@ -794,7 +863,7 @@
                             <div class="dropdown-content">
                                 <p>Simulation and Design of Nonlinear Controllers for a Two-Link Robot Arm</p>
                                 <a href="ControllerSimulation.html" class="project-link" target="_blank">View Project</a>
-                                <p>Matlab, Simulink</p>
+                                <p style="text-align: center;">Matlab, Simulink</p>
                                 <p>Non-Linear Controler Design, Stability Analysis</p>
                             </div>
                         </li>
@@ -803,7 +872,7 @@
                             <div class="dropdown-content">
                                 <p>Remote Control and Monitoring of Conveyor System for Package Delivery</p>
                                 <a href="SmartSortingLine.html" class="project-link" target="_blank">View Project</a>
-                                <p>Python, HTML, GitHub Render, PostGreSQL, Connected Components Workbench, Factory I/O, VS Code, Datagrip, Allen-Bradley Micro 800.</p>
+                                <p style="text-align: center;">Python, HTML, GitHub Render, PostGreSQL, Connected Components Workbench, Factory I/O, VS Code, Datagrip, Allen-Bradley Micro 800.</p>
                                 <p>Communication Protocols, PLC Programming, Sensor and Actuator Integration, Digital Twin, Machine Learning, based data management, IOT, AI/ML in predictive maintainance, Cyber Physical Syatems</p>
                             </div>
                         </li>
@@ -812,7 +881,7 @@
                             <div class="dropdown-content">
                                 <p>Two-Pole Electro-Permanent Magnet Clamp for Workpiece Holding During Machining</p>
                                 <a href="ElectroPermanentMagneticClamp.html" class="project-link" target="_blank">View Project</a>
-                                <p>MATLAB, OctaveFEMM, ANSYS EDT</p>
+                                <p style="text-align: center;">MATLAB, OctaveFEMM, ANSYS EDT</p>
                                 <p>Magnetic Circuit Analysis, Eddy Current Breaking, Magnetostatics</p>
                             </div>
                         </li>
@@ -821,7 +890,7 @@
                             <div class="dropdown-content">
                                 <p>Design of State Feedback Controller for Car Cruise Control</p>
                                 <a href="CarCruize.html" class="project-link" target="_blank">View Project</a>
-                                <p>MATLAB, Simulink</p>
+                                <p style="text-align: center;">MATLAB, Simulink</p>
                                 <p>PID Controller Design, State Space Representation, Open and Closed Loop Transfer Function, Nyquist Diagram, Root Locus Staility Analysis, Controllability and Observability</p>
                             </div>
                         </li>
@@ -830,7 +899,7 @@
                             <div class="dropdown-content">
                                 <p>Modeling and Simulation of Spacecraft Attitude Dynamics</p>
                                 <a href="SpaceCraft_Dyn.html"class="project-link" target="_blank">View Project</a>
-                                <p>MATLAB</p>
+                                <p style="text-align: center;">MATLAB</p>
                                 <p>Euler Equations, Frame Transformations, ODE45</p>
                             </div>
                         </li>
@@ -839,7 +908,7 @@
                             <div class="dropdown-content">
                                 <p>Optimization of Discrete Choice Models and Multi-Spring Systems</p>
                                 <a href="EDO.html"class="project-link" target="_blank">View Project</a>
-                                <p>MATLAB</p>
+                                <p style="text-align: center;">MATLAB</p>
                                 <p>Latin Hypercube Sampling, Polynomial Metamodeling, Radial Basis Function (RBF), Cross-validation, Optimization</p>
                             </div>
                         </li>
@@ -847,11 +916,119 @@
                 </div>
             </section>
 
+            <section id="timeline" class="timeline">
+
+            <div class="timeline-entry">
+                <div class="box research">
+                <h4>Jan 2025 – May 2025</h4>
+                <p><b>Graduate Research Assistant</b> – Neuromuscular Controls and Rehabilitation Lab, NCSU</p>
+                <p>Raleigh, NC</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box work">
+                <h4>May 2024 – Aug 2024</h4>
+                <p><b>Process Development Engineer</b> – Tioga Cardiovascular</p>
+                <p>Los Gatos, CA</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box edu">
+                <h4>Aug 2023 – May 2025</h4>
+                <p><b>Master of Science in Mechanical Engineering</b> – North Carolina State University</p>
+                <p>GPA: 4.0</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box work">
+                <h4>Aug 2021 – Jun 2023</h4>
+                <p><b>Associate Engineer</b> – Eaton</p>
+                <p>Pune, Maharashtra, India</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box work">
+                <h4>Sep 2020 – Apr 2021</h4>
+                <p><b>Research Co-op</b> – Bamboochi Bicycles</p>
+                <p>Mumbai, Maharashtra, India</p>
+                </div>
+            </div>
+
+            <div class="timeline-entry">
+                <div class="box edu">
+                <h4>Aug 2017 – Jun 2021</h4>
+                <p><b>Bachelor of Technology in Mechanical Engineering</b> – MKSSS's Cummins College of Engineering for Women</p>
+                <p>GPA: 8.45</p>
+                </div>
+            </div>
+
+
+            </section>
+            <aside id="portfolio" class="portfolio-aside">
+            <h2>Design Portfolio</h2>
+               <div class="portfolio-images">
+                    <img src="Design_Portfolio_Images/CatheterBraidingFixture.png" alt="Design Project 2"style="cursor: pointer;"
+     onclick="window.open('Design_Portfolio_PDFs/bamboo_cycle.pdf', '_blank')">
+                   <img src="Design_Portfolio_Images/bamboo cycle.png" alt="Design Project 1">
+                   <img src="Design_Portfolio_Images/Exo.png" alt="Design Project 3">
+               </div>
+            </aside>
+
+
+
+
+
+
+
+
+
         </div>
 
         <footer class="footer">
             
         </footer>
     </div>
+
+    <script>
+  window.addEventListener('scroll', function () {
+    const timeline = document.querySelector('.timeline');
+    const line = timeline.querySelector('::before');
+
+    // Create a dynamic style tag for pseudo-element
+    let styleTag = document.getElementById('timeline-line-style');
+    if (!styleTag) {
+      styleTag = document.createElement('style');
+      styleTag.id = 'timeline-line-style';
+      document.head.appendChild(styleTag);
+    }
+
+    const rect = timeline.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const totalTimelineHeight = timeline.scrollHeight;
+
+    if (rect.top < viewportHeight && rect.bottom > 0) {
+      const visiblePortion = Math.min(viewportHeight - rect.top, totalTimelineHeight);
+      const percent = Math.min(visiblePortion / totalTimelineHeight, 1);
+      const lineHeight = percent * totalTimelineHeight;
+
+      styleTag.textContent = `
+        .timeline::before {
+          height: ${lineHeight}px !important;
+        }
+      `;
+    } else {
+      styleTag.textContent = `
+        .timeline::before {
+          height: 0 !important;
+        }
+      `;
+    }
+  });
+</script>
+
 </body>
 </html>
